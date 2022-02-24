@@ -4,7 +4,7 @@ import { TestimonialsList } from './components/TestimonialsList/TestimonialsList
 
 function App() {
   return (
-    <div className="h-screen w-screen flex justify-center">
+    <div className="flex justify-center">
       <TestimonialsList/>
     </div>
   );
