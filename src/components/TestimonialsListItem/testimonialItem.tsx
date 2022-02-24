@@ -21,25 +21,25 @@ const TestimonialItem = ({
   mentor_name
 }: ITestimonials) => {
   return (
-    <div className="flex flex-row h-16 space-x-6 hover:bg-slate-100">
+    <div className="flex flex-row h-16 space-x-6 hover:bg-slate-100 border-b-2 border-solid border-slate-100">
       <div className="track-icon ml-4 w-15 h-full grid content-center">
-        <img className="w-10 h-10" src={track_icon_url} alt="Python Track" />
+        <img className="w-8 h-8" src={track_icon_url} alt="Python Track" />
       </div>
       <div className="avatar w-15 h-full grid content-center">
         <img className="rounded-full w-12 h-12" src={avatar_icon_url} alt="avatar" />
       </div>
       <div className="reviewer w-72 h-full flex flex-col grid content-center">
         <p className="font-semibold font-sans">{reviewer_name}</p>
-        <p className="font-normal font-sans">on {mentor_name} in {track_name}</p>
+        <p className="font-normal text-sm font-sans">on {mentor_name} in {track_name}</p>
       </div>
       <div className="content w-5/12 h-full grid content-center">
         <p className="font-normal font-sans antialiased">{content}</p>
       </div>
-      <div className="creation-date h-full w-40 grid content-center">
-        <p className="font-normal font-semibold font-sans">{getDate(date_created)} ago</p>
+      <div className="creation-date h-full w-48 grid content-center text-right">
+        <p className="font-medium text-gray-700 text-sm tracking-wide font-sans">{getDate(date_created)} ago</p>
       </div>
       <div className="next-button h-full w-8">
-        <button className="h-full w-full">
+        <button className="h-full w-full ">
           <ChevronRightIcon className="text-gray-500" />
         </button>
       </div>
