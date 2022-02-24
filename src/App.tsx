@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import { TestimonialItem } from './components/TestimonialsListItem/testimonialItem';
+import { TestimonialsList } from './components/TestimonialsList/TestimonialsList';
 
 function App() {
   return (
-    <div>
-      <TestimonialItem/>
+    <div className="h-screen w-screen flex justify-center">
+      <TestimonialsList/>
     </div>
   );
 }
