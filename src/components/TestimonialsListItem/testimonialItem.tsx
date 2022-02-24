@@ -1,6 +1,6 @@
 import React from "react";
 import { ChevronRightIcon } from "@heroicons/react/outline";
-
+import { getDate } from './CalculateDate'
 interface ITestimonials {
   track_icon_url: string;
   avatar_icon_url: string;
@@ -28,17 +28,17 @@ const TestimonialItem = ({
       <div className="avatar w-15 h-full grid content-center">
         <img className="rounded-full w-12 h-12" src={avatar_icon_url} alt="avatar" />
       </div>
-      <div className="reviewer w-80 h-full flex flex-col grid content-center">
+      <div className="reviewer w-72 h-full flex flex-col grid content-center">
         <p className="font-semibold font-sans">{reviewer_name}</p>
-        <p className="font-normal font-sans">on {reviewer_name} in {track_name}</p>
+        <p className="font-normal font-sans">on {mentor_name} in {track_name}</p>
       </div>
-      <div className="content w-1/2 h-full grid content-center">
+      <div className="content w-5/12 h-full grid content-center">
         <p className="font-normal font-sans antialiased">{content}</p>
       </div>
       <div className="creation-date h-full w-40 grid content-center">
-        <p className="font-normal font-semibold font-sans">{date_created}</p>
+        <p className="font-normal font-semibold font-sans">{getDate(date_created)} ago</p>
       </div>
-      <div className="next-button h-full w-8 mr-8">
+      <div className="next-button h-full w-8">
         <button className="h-full w-full">
           <ChevronRightIcon className="text-gray-500" />
         </button>
