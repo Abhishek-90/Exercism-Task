@@ -21,7 +21,7 @@ const TestimonialItem = ({
   mentor_name
 }: ITestimonials) => {
   return (
-    <div className="flex flex-row h-16 space-x-6">
+    <div className="flex flex-row h-16 space-x-6 hover:bg-slate-100">
       <div className="track-icon ml-4 w-15 h-full grid content-center">
         <img className="w-10 h-10" src={track_icon_url} alt="Python Track" />
       </div>
@@ -38,7 +38,7 @@ const TestimonialItem = ({
       <div className="creation-date h-full w-40 grid content-center">
         <p className="font-normal font-semibold font-sans">{date_created}</p>
       </div>
-      <div className="next-button h-full w-8">
+      <div className="next-button h-full w-8 mr-8">
         <button className="h-full w-full">
           <ChevronRightIcon className="text-gray-500" />
         </button>
