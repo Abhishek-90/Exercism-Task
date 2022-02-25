@@ -3,7 +3,16 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'content-color':'#3F3A5A',
+        'date-created-color':'#655F90',
+        'track-color':'#5C5589',
+        'hover':'#F4F7FD',
+        'reviewer-name-color':'#170F46',
+        'arrow-color':'#716B99'
+      }
+    },
   },
   plugins: [],
 }
