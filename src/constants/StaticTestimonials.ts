@@ -18,7 +18,7 @@ export const testimonials: ITestimonials[] = [
       avatar_url: "https://avatars2.githubusercontent.com/u/10456471?v=4",
     },
     content: "Got nice feedback.",
-    created_at: "2022-01-31T10:37:34.000Z",
+    created_at: "2022-02-23T10:37:34.000Z",
   },
   {
     id: 12130,
