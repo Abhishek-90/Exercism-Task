@@ -29,14 +29,14 @@ const TestimonialItem = ({
         <img className="rounded-full w-12 h-12" src={avatar_icon_url} alt="avatar" />
       </div>
       <div className="reviewer w-72 h-full flex flex-col grid content-center">
-        <p className="font-semibold font-sans text-reviewer-name-color">{reviewer_name}</p>
-        <p className="font-normal text-sm font-sans text-track-color">on {mentor_name} in {track_name}</p>
+        <p className="font-semibold font-Poppins text-reviewer-name-color">{reviewer_name}</p>
+        <p className="font-normal text-sm font-Poppins text-track-color">on {mentor_name} in {track_name}</p>
       </div>
       <div className="content w-5/12 h-full grid content-center">
-        <p style={{width: '60ch', whiteSpace: 'nowrap',overflow: 'hidden', textOverflow: 'ellipsis'}} className="font-normal font-sans text-content-color">{content}</p>
+        <p style={{width: '50ch', whiteSpace: 'nowrap',overflow: 'hidden', textOverflow: 'ellipsis'}} className="font-normal font-Poppins text-content-color">{content}</p>
       </div>
       <div className="creation-date h-full w-48 grid content-center text-right">
-        <p className="font-medium text-date-created-color font-Poppins">{getDate(date_created)} ago</p>
+        <p className="text-sm text-date-created-color font-Poppins font-semibold">{getDate(date_created)} ago</p>
       </div>
       <div className="next-button h-full w-8">
         <button className="h-full w-full ">

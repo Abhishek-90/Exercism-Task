@@ -13,7 +13,7 @@ module.exports = {
         'arrow-color':'#716B99'
       },
       fontFamily:{
-        Poppins:["Poppins", "sans-serif"]
+        Poppins:["Poppins", "sans-serif"],
       }
     },
   },
