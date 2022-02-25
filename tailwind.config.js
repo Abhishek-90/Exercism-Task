@@ -11,6 +11,9 @@ module.exports = {
         'hover':'#F4F7FD',
         'reviewer-name-color':'#170F46',
         'arrow-color':'#716B99'
+      },
+      fontFamily:{
+        Poppins:["Poppins", "sans-serif"]
       }
     },
   },
