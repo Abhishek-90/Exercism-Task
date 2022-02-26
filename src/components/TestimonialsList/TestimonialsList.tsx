@@ -1,10 +1,12 @@
 import React from "react";
 import { testimonials } from "../../constants/StaticTestimonials";
+import { Filters } from "../FilterBar/Filters";
 import { TestimonialItem } from "../TestimonialsListItem/testimonialItem";
 
 const TestimonialsList = () => {
   return (
     <div className="testimonials-list rounded-lg my-16 w-11/12 shadow-3xl">
+      <Filters/>
       {testimonials.map((item) => {
         return (
           <TestimonialItem

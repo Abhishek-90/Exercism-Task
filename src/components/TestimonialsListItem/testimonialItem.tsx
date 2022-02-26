@@ -36,7 +36,7 @@ const TestimonialItem = ({
         <p style={{width: '50ch', whiteSpace: 'nowrap',overflow: 'hidden', textOverflow: 'ellipsis'}} className="font-normal font-Poppins text-content-color">{content}</p>
       </div>
       <div className="creation-date h-full w-48 grid content-center text-right">
-        <p className="text-sm text-date-created-color font-Poppins font-semibold">{getDate(date_created)} ago</p>
+        <p className="text-sm text-date-created-color font-Poppins font-semibold mr-6">{getDate(date_created)} ago</p>
       </div>
       <div className="next-button h-full w-8">
         <button className="h-full w-full ">
