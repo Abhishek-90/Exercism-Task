@@ -12,7 +12,8 @@ module.exports = {
         'reviewer-name-color':'#170F46',
         'arrow-color':'#716B99',
         'bg-shadow':'#EBEFF9',
-        'filters-color': '#F0F3F9'
+        'filters-color': '#F0F3F9',
+        'new-old':'#655F90',
       },
       fontFamily:{
         Poppins:["Poppins", "sans-serif"],
