@@ -13,6 +13,7 @@ module.exports = {
         'arrow-color':'#716B99',
         'bg-shadow':'#EBEFF9',
         'filters-color': '#F0F3F9',
+        'title-color':'#6A6494',
         'new-old':'#655F90',
       },
       fontFamily:{
