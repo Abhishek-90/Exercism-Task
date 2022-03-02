@@ -17,24 +17,29 @@ const TrackFilter = () => {
   const options:IOption[] = [];
 
   useEffect(() => {
-    // Implement hook to fetch tracks from Track-Api on Page load.
+
     fetchTracks().then((response) => {
       response.forEach((item:any)=> {
         const temp = {
           value: item.title,
-          label: <div><img src={item.icon_url} alt={item.title}/></div>
+          label: <div><img className="h-10" src={item.icon_url} alt={item.title}/></div>
         }
         options.push(temp)
       })
-
-      console.log(options)
     })
-  },[])
+  },)
+
   return (
-    <div className="track-filter">
+    <div className="track-filter h-12 ml-4">
       <Select 
-        className="bg-filters-color h-full w-full pl-4 font-Poppins text-new-old rounded-lg" 
+        isMulti={false}
+        isSearchable={false}
         options={options}
+        className="my-4"
+        components={{
+          IndicatorSeparator: ()=>null
+        }}
+        onChange= {(value)=> console.log(value)}
       />
     </div>
   );
