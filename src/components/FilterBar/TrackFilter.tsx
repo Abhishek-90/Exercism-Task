@@ -22,7 +22,7 @@ const TrackFilter = () => {
       response.forEach((item:any)=> {
         const temp = {
           value: item.title,
-          label: <div><img className="h-10" src={item.icon_url} alt={item.title}/></div>
+          label: <div><img className="h-12 p-0" src={item.icon_url} alt={item.title}/></div>
         }
         options.push(temp)
       })
@@ -38,6 +38,13 @@ const TrackFilter = () => {
         className="my-4"
         components={{
           IndicatorSeparator: ()=>null
+        }}
+        styles={{
+          control: base => ({
+            ...base,
+            border: 0,
+            outline: 0
+          })
         }}
         onChange= {(value)=> console.log(value)}
       />
