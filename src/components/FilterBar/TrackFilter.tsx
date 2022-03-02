@@ -35,6 +35,10 @@ const TrackFilter = () => {
         isMulti={false}
         isSearchable={false}
         options={options}
+        defaultValue={{
+          value: '',
+          label: <div><img className="h-12 p-0" src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/tracks-2e780b460e113a9b07ce4446c988a31c40547b00.svg" alt=""/></div>
+        }}
         className="my-4"
         components={{
           IndicatorSeparator: ()=>null
