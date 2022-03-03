@@ -16,6 +16,8 @@ module.exports = {
         'title-color':'#6A6494',
         'new-old':'#655F90',
         'button' : '#D7DAE5',
+        'button-disabled': '#E0E0ED',
+        'button-text':'#746E9A',
       },
       fontFamily:{
         Poppins:["Poppins", "sans-serif"],
