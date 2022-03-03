@@ -6,7 +6,7 @@ import { TestimonialItem } from "../TestimonialsListItem/testimonialItem";
 
 const TestimonialsList = () => {
   return (
-    <div className="testimonials-list rounded-lg my-16 w-11/12 border-b-2 border-solid border-slate-200 shadow-3xl">
+    <div className="testimonials-list rounded-lg my-4 w-11/12 border-b-2 border-solid border-slate-200 shadow-3xl">
       <Filters/>
       {testimonials.map((item) => {
         return (

@@ -18,6 +18,7 @@ module.exports = {
         'button' : '#D7DAE5',
         'button-disabled': '#E0E0ED',
         'button-text':'#746E9A',
+        'navbar-border': '#CFDAF1',
       },
       fontFamily:{
         Poppins:["Poppins", "sans-serif"],
