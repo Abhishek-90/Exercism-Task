@@ -27,7 +27,8 @@ const NavigationBar = () => {
         </a>
       </div>
       <div className="dashboard-link grid items-center">
-        <a href="/">
+        <a className="flex flex-row space-x-4 ml-4" href="/">
+          <img className="h-6 w-6" src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/contribute-269d926a07a0b503203914911e0a5704469ae8c4.svg" alt="contribute-logo"/>
           <p className="font-Poppins font-semibold">Contribute</p>
         </a>
       </div>
