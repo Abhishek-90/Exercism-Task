@@ -37,7 +37,7 @@ const TrackFilter = () => {
         options={options}
         defaultValue={{
           value: '',
-          label: <div><img className="h-12 p-0" src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/tracks-2e780b460e113a9b07ce4446c988a31c40547b00.svg" alt=""/></div>
+          label: <div><img className="h-12 p-0" src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/logo-42e9b829cf6816496069a62608cb51e7c13624bd.svg" alt=""/></div>
         }}
         className="my-4"
         components={{
