@@ -84,9 +84,9 @@ const NavigationBar = () => {
             alt="Notification"
           />
         </div>
-        <div className="reputation-picture w-24 flex flex-row my-4 rounded-r-full rounded-l-full bg-slate-200 ring-8 ring-violet-700 bg-black">
+        <div className="reputation-picture w-24 flex flex-row content-center my-4 rounded-r-full rounded-l-full ring-8 ring-violet-700 bg-black">
           <img
-            className="h-8 w-8 ml-1 filter invert sepia hue-rotate-180 brightness-95 contrast-75 saturate-200"
+            className="h-6 w-6 ml-3 mt-1 filter invert sepia hue-rotate-236 brightness-100 contrast-100 saturate-1618"
             src="https://d24y9kuxp2d7l2.cloudfront.net/icons/reputation-5b5938e36519908ac61075db3b9826307a0f907a.svg"
             alt="reputation"
           />

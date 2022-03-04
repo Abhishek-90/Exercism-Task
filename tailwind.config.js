@@ -27,6 +27,12 @@ module.exports = {
       },
       boxShadow: {
         '3xl': '0 60px 60px 60px rgba(232,236,247, 0.7)',
+      },
+      saturate: {
+        1618:'18.18',
+      },
+      hueRotate: {
+        236: '236deg',
       }
     },
   },
