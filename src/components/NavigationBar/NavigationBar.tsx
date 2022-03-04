@@ -84,12 +84,13 @@ const NavigationBar = () => {
             alt="Notification"
           />
         </div>
-        <div className="notification-picture">
+        <div className="reputation-picture w-24 flex flex-row my-4 rounded-r-full rounded-l-full bg-slate-200 ring-8 ring-violet-700 bg-black">
           <img
-            className="h-6 w-8 fill-amber-600"
+            className="h-8 w-8 ml-1 filter invert sepia hue-rotate-180 brightness-95 contrast-75 saturate-200"
             src="https://d24y9kuxp2d7l2.cloudfront.net/icons/reputation-5b5938e36519908ac61075db3b9826307a0f907a.svg"
-            alt="Notification"
+            alt="reputation"
           />
+          <p className="font-Poppins ml-1 mt-1 text-white">300K</p>
         </div>
         <div className="profile-picture  grid items-center">
           <img
