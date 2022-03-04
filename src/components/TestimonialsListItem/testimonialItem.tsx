@@ -7,7 +7,7 @@ interface ITestimonials {
   content: string;
   reviewer_name: string;
   track_name: string;
-  mentor_name: string;
+  exercise_title: string;
   date_created: string;
 }
 
@@ -18,7 +18,7 @@ const TestimonialItem = ({
   reviewer_name,
   track_name,
   date_created,
-  mentor_name,
+  exercise_title,
 }: ITestimonials) => {
   return (
     <div className="flex flex-row h-16 space-x-6 hover:bg-hover border-b-2 border-solid border-slate-100">
@@ -37,7 +37,7 @@ const TestimonialItem = ({
           {reviewer_name}
         </p>
         <p className="font-normal text-sm font-Poppins text-track-color">
-          on {mentor_name} in {track_name}
+          on {exercise_title} in {track_name}
         </p>
       </div>
       <div className="content w-5/12 h-full grid content-center">

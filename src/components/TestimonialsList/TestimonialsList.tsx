@@ -18,7 +18,7 @@ const TestimonialsList = () => {
             reviewer_name={item.mentor.handle}
             track_name={item.track.title}
             date_created={item.created_at}
-            mentor_name={item.mentor.handle}
+            exercise_title={item.exercise.slug}
           />
         );
       })}
