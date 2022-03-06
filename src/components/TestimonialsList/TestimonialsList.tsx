@@ -1,18 +1,20 @@
-import React, { useEffect } from "react";
-// import { testimonials } from "../../constants/StaticTestimonials";
+import React, { useEffect, useState } from "react";
 import { Filters } from "../FilterBar/Filters";
 import { Pagination } from "../Pagination/Pagination";
 import { TestimonialItem } from "../TestimonialsListItem/testimonialItem";
 import { ITestimonials } from "../../interfaces/testimonials";
 import { getTestimonials } from "./GetTestimonials";
-// import axios from "axios";
-// import { testimonialsEndpoint } from "../../constants/ApiEndpoint";
 
 const TestimonialsList = () => {
-  const testimonials:ITestimonials[] = []
+  const [testimonials, setTestimonials] = useState<ITestimonials[]>([])
 
   useEffect(() => {
-    console.log(getTestimonials())
+    const getTestimonialsCaller = async () => {
+      const res = await getTestimonials()
+      setTestimonials(res.testimonials.results)
+    }
+
+    getTestimonialsCaller()
   })
 
   return (
