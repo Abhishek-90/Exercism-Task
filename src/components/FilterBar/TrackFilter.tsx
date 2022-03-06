@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { tracksEndpoint } from "../../constants/ApiEndpoint";
 interface IOption {
@@ -13,23 +13,29 @@ const fetchTracks = async () => {
 };
 
 const TrackFilter = () => {
-  const options: IOption[] = [];
+  const [options, setOptions] = useState<IOption[]>([])
 
   useEffect(() => {
-    fetchTracks().then((response) => {
-      response.forEach((item: any) => {
-        const temp = {
+
+    const fetchTracksCaller = async () => {
+      const res = await fetchTracks()
+      const tempArr:IOption[] = []
+      res.forEach((item:any) => {
+        const temp:IOption = {
           value: item.title,
           label: (
             <div>
               <img className="h-12 p-0" src={item.icon_url} alt={item.title} />
             </div>
-          ),
-        };
-        options.push(temp);
-      });
-    });
-  });
+        )}
+
+        tempArr.push(temp)
+      })
+      setOptions(tempArr)      
+    }
+
+    fetchTracksCaller()
+  },[]);
 
   return (
     <div className="track-filter h-12 ml-4">
