@@ -21,6 +21,7 @@ module.exports = {
         'navbar-border': '#CFDAF1',
         'notification':'#ECA944',
         'navbar-text':'#5F588B',
+        'static-text':'#130B43'
       },
       fontFamily:{
         Poppins:["Poppins", "sans-serif"],
