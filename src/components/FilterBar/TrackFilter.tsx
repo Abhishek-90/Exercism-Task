@@ -8,8 +8,12 @@ interface IOption {
 }
 
 const fetchTracks = async () => {
-  const response = await axios.get(tracksEndpoint);
-  return response.data.tracks;
+  try {
+    const response = await axios.get(tracksEndpoint);
+    return response.data.tracks;    
+  } catch (error) {
+    console.error(error)
+  }
 };
 
 const TrackFilter = () => {
