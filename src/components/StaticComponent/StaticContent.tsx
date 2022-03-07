@@ -3,7 +3,7 @@ import React from 'react'
 const StaticContent = () => {
   return (
     <div className="grid items-center flex justify-items-center my-8">
-        <img className="h-14 w-14 my-4" src={require("../../constants/Message.jpg")} alt="zigzag"/>
+        <img className="h-16 w-14 my-4" src={require("../../constants/Message.jpg")} alt="zigzag"/>
         <div className="left">
             <h2 className="font-Poppins text-3xl font-black tracking-wide text-static-text">Testimonials I've left <span className="p-1 h-8 w-64 ml-2 text-sm border border-solid border-2 rounded-l-xl rounded-r-xl border-gray-300">47</span></h2>
         </div>
