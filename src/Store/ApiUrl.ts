@@ -8,7 +8,7 @@ interface ITestimonialUrlProps {
 }
 
 const testimonialUrlProps: ITestimonialUrlProps = {
-    order: 'newest_first',
+    order: 'oldest_first',
     page: 1,
 }
 
