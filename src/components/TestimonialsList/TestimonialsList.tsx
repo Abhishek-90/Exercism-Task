@@ -17,7 +17,7 @@ const TestimonialsList = () => {
     }
 
     getTestimonialsCaller()
-  },[])
+  },[page, order])
 
   return (
     <div className="testimonials-list rounded-lg my-4 w-11/12 border-b-2 border-solid border-slate-200 shadow-3xl">

@@ -17,7 +17,9 @@ export const testimonialSlice = createSlice({
     initialState:testimonialUrlProps,
     reducers:{
       changePage: (state, action)=>{
-          state.page = state.page + action.payload
+        console.log(action.payload)
+        state.page = state.page + action.payload
+        console.log(state.page)
       },
       changeOrder: (state, action) => {
           state.order = action.payload

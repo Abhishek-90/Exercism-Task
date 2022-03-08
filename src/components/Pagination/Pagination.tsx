@@ -1,10 +1,15 @@
-import React from "react";
+import { useDispatch } from "react-redux";
+import { changePage } from "../../Store/ApiUrl";
 
 const Pagination = () => {
+  const dispatch = useDispatch()
   return (
     <div className="h-20 flex flex-row ">
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
-        <button className="previous h-1/2 w-32 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed">
+        <button 
+          className="previous h-1/2 w-32 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
+          onClick={()=>dispatch(changePage(-1))}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 my-3 ml-4"
@@ -26,9 +31,12 @@ const Pagination = () => {
       <div className="page-number w-4/6 ">
         {/* {Pending Paginations implemention} */}
       </div>
-      
+
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
-        <button className="previous h-2/4 w-24 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed">
+        <button 
+          className="previous h-2/4 w-24 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
+          onClick={()=>dispatch(changePage(1))}
+        >
           <p className="font-Poppins text-sm font-normal w-14 my-3 ml-2">
             Next
           </p>
