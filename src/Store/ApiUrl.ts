@@ -2,14 +2,14 @@ import { createSlice } from '@reduxjs/toolkit'
 
 interface ITestimonialUrlProps {
     order?: string,
-    page?: number,
+    page: number,
     track?: string,
     exercise?: string
 }
 
 const testimonialUrlProps: ITestimonialUrlProps = {
-    order:'oldest_first',
-    page:1,
+    order: 'newest_first',
+    page: 1,
 }
 
 export const testimonialSlice = createSlice({
