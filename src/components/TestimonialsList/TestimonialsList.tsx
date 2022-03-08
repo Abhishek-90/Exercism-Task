@@ -4,15 +4,17 @@ import { Pagination } from "../Pagination/Pagination";
 import { TestimonialItem } from "../TestimonialsListItem/testimonialItem";
 import { ITestimonials } from "../../interfaces/testimonials";
 import { getTestimonials } from "./GetTestimonials";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { getTotalPage } from '../../Store/ApiUrl'
 const TestimonialsList = () => {
   const [testimonials, setTestimonials] = useState<ITestimonials[]>([])
   const { page, order } = useSelector((state: any) => state.testimonial)
-  
+  const dispatch = useDispatch()
+
   useEffect(() => {
     const getTestimonialsCaller = async () => {
       const res = await getTestimonials(page,order)
+      dispatch(getTotalPage(res.testimonials.pagination.total_pages))
       setTestimonials(res.testimonials.results)
     }
 

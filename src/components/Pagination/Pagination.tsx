@@ -1,7 +1,9 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changePage } from "../../Store/ApiUrl";
 
 const Pagination = () => {
+  const { page, totalPage } = useSelector((state:any) => state.testimonial)
+  
   const dispatch = useDispatch()
   return (
     <div className="h-20 flex flex-row ">
@@ -9,6 +11,7 @@ const Pagination = () => {
         <button 
           className="previous h-1/2 w-32 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
           onClick={()=>dispatch(changePage(-1))}
+          disabled={page === 1}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +39,7 @@ const Pagination = () => {
         <button 
           className="previous h-2/4 w-24 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
           onClick={()=>dispatch(changePage(1))}
+          disabled={totalPage === page}
         >
           <p className="font-Poppins text-sm font-normal w-14 my-3 ml-2">
             Next

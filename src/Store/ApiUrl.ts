@@ -4,7 +4,8 @@ interface ITestimonialUrlProps {
     order?: string,
     page: number,
     track?: string,
-    exercise?: string
+    exercise?: string, 
+    totalPage?: number
 }
 
 const testimonialUrlProps: ITestimonialUrlProps = {
@@ -17,15 +18,16 @@ export const testimonialSlice = createSlice({
     initialState:testimonialUrlProps,
     reducers:{
       changePage: (state, action)=>{
-        console.log(action.payload)
         state.page = state.page + action.payload
-        console.log(state.page)
       },
       changeOrder: (state, action) => {
           state.order = action.payload
+      },
+      getTotalPage: (state, action) => {
+        state.totalPage = action.payload
       }
     }
 })
 
-export const {changePage, changeOrder} = testimonialSlice.actions
+export const {changePage, changeOrder, getTotalPage} = testimonialSlice.actions
 export default testimonialSlice.reducer
