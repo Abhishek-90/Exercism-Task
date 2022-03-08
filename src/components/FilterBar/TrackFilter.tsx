@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
-import { tracksEndpoint } from "../../constants/ApiEndpoint";
+import { tracks } from "../../constants/ApiEndpoint";
 interface IOption {
   value: string;
   label: JSX.Element;
@@ -9,7 +9,7 @@ interface IOption {
 
 const fetchTracks = async () => {
   try {
-    const response = await axios.get(tracksEndpoint);
+    const response = await axios.get(tracks);
     return response.data.tracks;    
   } catch (error) {
     console.error(error)
