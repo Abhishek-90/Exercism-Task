@@ -1,6 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { changeExercise } from "../../Store/ApiUrl";
+
+
 
 const TitleFilter = () => {
+  const dispatch = useDispatch()
   return (
     <div className="type-search-filter h-12 w-96 my-4 flex flex-row bg-filters-color ml-4 rounded-lg ">
       <svg
@@ -23,6 +28,7 @@ const TitleFilter = () => {
         type="text"
         className="search-box bg-filters-color font-Poppins rounded-lg h-full w-full text-search-text font-medium pl-4 outline-none"
         placeholder="Filter by excercise title"
+        onChange={(e)=>dispatch(changeExercise(e.target.value))}
       />
     </div>
   );
