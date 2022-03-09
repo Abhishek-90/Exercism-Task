@@ -54,7 +54,7 @@ const Pagination = () => {
       </div>
 
       <div className="page-number w-4/6 grid items-center flex justify-center">
-        <div className="inner-page-number h-full flex flex-row space-x-4 bg-slate-100">
+        <div className="inner-page-number flex flex-row space-x-4">
         {
           pageNumbers.map((item)=> {
             return (

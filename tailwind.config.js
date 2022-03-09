@@ -21,7 +21,10 @@ module.exports = {
         'navbar-border': '#CFDAF1',
         'notification':'#ECA944',
         'navbar-text':'#5F588B',
-        'static-text':'#130B43'
+        'static-text':'#130B43',
+        'page-button':'#D6D9E4',
+        'page-button-focus': '#76709F',
+        'focus-button-bg' : '#E1EBFF',
       },
       fontFamily:{
         Poppins:["Poppins", "sans-serif"],
@@ -34,6 +37,10 @@ module.exports = {
       },
       hueRotate: {
         236: '236deg',
+      },
+      borderWidth:{
+        '3':'3px',
+        // '2':'2px'
       }
     },
   },
