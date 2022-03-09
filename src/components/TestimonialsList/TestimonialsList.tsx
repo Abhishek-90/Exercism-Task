@@ -6,6 +6,7 @@ import { ITestimonials } from "../../interfaces/testimonials";
 import { getTestimonials } from "./GetTestimonials";
 import { useDispatch, useSelector } from "react-redux";
 import { getTotalPage } from '../../Store/ApiUrl'
+
 const TestimonialsList = () => {
 
   const [testimonials, setTestimonials] = useState<ITestimonials[]>([])
