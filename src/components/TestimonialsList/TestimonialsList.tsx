@@ -7,19 +7,20 @@ import { getTestimonials } from "./GetTestimonials";
 import { useDispatch, useSelector } from "react-redux";
 import { getTotalPage } from '../../Store/ApiUrl'
 const TestimonialsList = () => {
+
   const [testimonials, setTestimonials] = useState<ITestimonials[]>([])
-  const { page, order } = useSelector((state: any) => state.testimonial)
+  const { page, order, track } = useSelector((state: any) => state.testimonial)
   const dispatch = useDispatch()
 
   useEffect(() => {
     const getTestimonialsCaller = async () => {
-      const res = await getTestimonials(page,order)
+      const res = await getTestimonials(page,order,track)
       dispatch(getTotalPage(res.testimonials.pagination.total_pages))
       setTestimonials(res.testimonials.results)
     }
 
     getTestimonialsCaller()
-  },[page, order])
+  },[page, order, track])
 
   return (
     <div className="testimonials-list rounded-lg my-4 w-11/12 border-b-2 border-solid border-slate-200 shadow-3xl">

@@ -25,9 +25,12 @@ export const testimonialSlice = createSlice({
       },
       getTotalPage: (state, action) => {
         state.totalPage = action.payload
+      },
+      changeTrack: (state, action) => {
+        state.track = action.payload
       }
     }
 })
 
-export const {changePage, changeOrder, getTotalPage} = testimonialSlice.actions
+export const {changePage, changeOrder, getTotalPage,changeTrack } = testimonialSlice.actions
 export default testimonialSlice.reducer

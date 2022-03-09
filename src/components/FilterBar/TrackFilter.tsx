@@ -1,7 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import Select from "react-select";
 import { tracks } from "../../constants/ApiEndpoint";
+import { changeTrack } from "../../Store/ApiUrl";
+
 interface IOption {
   value: string;
   label: JSX.Element;
@@ -18,6 +21,7 @@ const fetchTracks = async () => {
 
 const TrackFilter = () => {
   const [options, setOptions] = useState<IOption[]>([])
+  const dispatch = useDispatch()
 
   useEffect(() => {
 
@@ -26,7 +30,7 @@ const TrackFilter = () => {
       const tempArr:IOption[] = []
       res.forEach((item:any) => {
         const temp:IOption = {
-          value: item.title,
+          value: item.slug,
           label: (
             <div>
               <img className="h-12 p-0" src={item.icon_url} alt={item.title} />
@@ -72,7 +76,7 @@ const TrackFilter = () => {
             outline: 0,
           }),
         }}
-        onChange={(value) => console.log(value)}
+        onChange={(value) => dispatch(changeTrack(value?.value))}
       />
     </div>
   );

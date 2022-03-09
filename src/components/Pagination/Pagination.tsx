@@ -11,7 +11,7 @@ const Pagination = () => {
         <button 
           className="previous h-1/2 w-32 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
           onClick={()=>dispatch(changePage(-1))}
-          disabled={page === 1}
+          disabled={page === 1 || totalPage === 0}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ const Pagination = () => {
         <button 
           className="previous h-2/4 w-24 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
           onClick={()=>dispatch(changePage(1))}
-          disabled={totalPage === page}
+          disabled={totalPage === page || totalPage === 0}
         >
           <p className="font-Poppins text-sm font-normal w-14 my-3 ml-2">
             Next
