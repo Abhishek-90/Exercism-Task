@@ -11,7 +11,7 @@ const getPageNumbers = (totalPage:number):number[]=> {
 
   if(totalPage > 3) {
     res.push(0)
-    for (let i = totalPage-2; i <= totalPage; i++) {
+    for (let i = Math.max(totalPage-2,4); i <= totalPage; i++) {
       res.push(i)
     }
   }
