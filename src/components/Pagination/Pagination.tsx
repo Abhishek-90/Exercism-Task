@@ -54,7 +54,7 @@ const Pagination = () => {
         {
           pageNumbers.map((item)=> {
             return (
-              <PaginationNumber pageNumber={parseInt(item)}/>
+              <PaginationNumber key={item} pageNumber={parseInt(item)}/>
               )
             })
           }
