@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { changePageByOne } from "../../Store/ApiUrl";
 import PaginationNumber from "./PaginationNumberButton";
 
-const getPageNumbers = (totalPage:number):number[] => {
+const getPageNumbers = (totalPage:number):number[]=> {
   const res:number[] =[]
 
   for (let i = 1; i <= Math.min(totalPage,3); i++) {
@@ -63,7 +63,7 @@ const Pagination = () => {
 
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
         <button
-          className="previous h-2/4 w-24 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
+          className="previous h-2/4 w-24 flex flex-row shadow drop-shadow-3xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
           onClick={() => dispatch(changePageByOne(1))}
           disabled={totalPage === page || totalPage === 0}
         >

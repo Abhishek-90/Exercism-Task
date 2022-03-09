@@ -15,7 +15,7 @@ module.exports = {
         'filters-color': '#F0F3F9',
         'title-color':'#6A6494',
         'new-old':'#655F90',
-        'button' : '#D7DAE5',
+        'button' : '#D6D8E4',
         'button-disabled': '#E0E0ED',
         'button-text':'#746E9A',
         'navbar-border': '#CFDAF1',
