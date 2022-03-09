@@ -33,9 +33,13 @@ export const testimonialSlice = createSlice({
       },
       changePageByPayload: (state,action) => {
         state.page = action.payload;
+      },
+      changeExercise: (state, action) => {
+        state.page = 1
+        state.exercise = action.payload
       }
     }
 })
 
-export const {changePageByOne, changeOrder, getTotalPage,changeTrack, changePageByPayload } = testimonialSlice.actions
+export const { changePageByOne, changeOrder, getTotalPage,changeTrack, changePageByPayload, changeExercise } = testimonialSlice.actions
 export default testimonialSlice.reducer
