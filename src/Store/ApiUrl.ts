@@ -36,6 +36,7 @@ export const testimonialSlice = createSlice({
       },
       changeExercise: (state, action) => {
         state.page = 1
+        console.log("redux :", action.payload)
         state.exercise = action.payload
       }
     }

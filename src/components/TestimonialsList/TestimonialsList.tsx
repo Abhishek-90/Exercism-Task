@@ -10,18 +10,18 @@ import { getTotalPage } from '../../Store/ApiUrl'
 const TestimonialsList = () => {
 
   const [testimonials, setTestimonials] = useState<ITestimonials[]>([])
-  const { page, order, track } = useSelector((state: any) => state.testimonial)
+  const { page, order, track, exercise } = useSelector((state: any) => state.testimonial)
   const dispatch = useDispatch()
 
   useEffect(() => {
     const getTestimonialsCaller = async () => {
-      const res = await getTestimonials(page,order,track)
+      const res = await getTestimonials(page,order,track, exercise)
       dispatch(getTotalPage(res.testimonials.pagination.total_pages))
       setTestimonials(res.testimonials.results)
     }
 
     getTestimonialsCaller()
-  },[page, order, track])
+  },[page, order, track, exercise])
 
   return (
     <div className="testimonials-list rounded-lg my-4 w-screen border-b-2 border-solid border-slate-200 shadow-3xl">
