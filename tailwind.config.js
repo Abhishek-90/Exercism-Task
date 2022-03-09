@@ -25,6 +25,7 @@ module.exports = {
         'page-button':'#D6D9E4',
         'page-button-focus': '#76709F',
         'focus-button-bg' : '#E1EBFF',
+        'search-text': '#625C8E',
       },
       fontFamily:{
         Poppins:["Poppins", "sans-serif"],

@@ -2,7 +2,7 @@ import React from "react";
 
 const TitleFilter = () => {
   return (
-    <div className="type-search-filter h-12 w-96 my-4 flex flex-row bg-filters-color ml-4 rounded-lg">
+    <div className="type-search-filter h-12 w-96 my-4 flex flex-row bg-filters-color ml-4 rounded-lg ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className=" my-3 h-6 w-6 ml-4"
@@ -21,7 +21,7 @@ const TitleFilter = () => {
 
       <input
         type="text"
-        className="search-box bg-filters-color font-Poppins rounded-lg h-full w-full text-title-color font-medium pl-4 outline-none"
+        className="search-box bg-filters-color font-Poppins rounded-lg h-full w-full text-search-text font-medium pl-4 outline-none"
         placeholder="Filter by excercise title"
       />
     </div>
