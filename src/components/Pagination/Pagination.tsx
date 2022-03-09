@@ -24,7 +24,7 @@ const Pagination = () => {
   const pageNumbers: any[] = getPageNumbers(totalPage);
 
   return (
-    <div className="h-20 flex flex-row ">
+    <div className="h-20 flex flex-row border border-solid border-t-2">
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
         <button
           className="previous h-1/2 w-32 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
