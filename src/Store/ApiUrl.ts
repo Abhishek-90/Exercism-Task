@@ -17,7 +17,7 @@ export const testimonialSlice = createSlice({
     name: 'testimonialsUrl',
     initialState:testimonialUrlProps,
     reducers:{
-      changePage: (state, action)=>{
+      changePageByOne: (state, action)=>{
         state.page = state.page + action.payload
       },
       changeOrder: (state, action) => {
@@ -28,9 +28,12 @@ export const testimonialSlice = createSlice({
       },
       changeTrack: (state, action) => {
         state.track = action.payload
+      },
+      changePageByPayload: (state,action) => {
+        state.page = action.payload;
       }
     }
 })
 
-export const {changePage, changeOrder, getTotalPage,changeTrack } = testimonialSlice.actions
+export const {changePageByOne, changeOrder, getTotalPage,changeTrack, changePageByPayload } = testimonialSlice.actions
 export default testimonialSlice.reducer

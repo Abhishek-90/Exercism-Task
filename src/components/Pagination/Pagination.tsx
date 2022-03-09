@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changePage } from "../../Store/ApiUrl";
+import { changePageByOne } from "../../Store/ApiUrl";
 import PaginationNumber from "./PaginationNumberButton";
 
 const getPageNumbers = (totalPage:number):number[]=> {
@@ -11,14 +11,10 @@ const getPageNumbers = (totalPage:number):number[]=> {
 
   if(totalPage > 3) {
     res.push(0)
-
     for (let i = totalPage-2; i <= totalPage; i++) {
       res.push(i)
     }
   }
-
-  console.log(res)
-
   return res
 }
 
@@ -32,7 +28,7 @@ const Pagination = () => {
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
         <button
           className="previous h-1/2 w-32 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
-          onClick={() => dispatch(changePage(-1))}
+          onClick={() => dispatch(changePageByOne(-1))}
           disabled={page === 1 || totalPage === 0}
         >
           <svg
@@ -68,7 +64,7 @@ const Pagination = () => {
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
         <button
           className="previous h-2/4 w-24 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
-          onClick={() => dispatch(changePage(1))}
+          onClick={() => dispatch(changePageByOne(1))}
           disabled={totalPage === page || totalPage === 0}
         >
           <p className="font-Poppins text-sm font-normal w-14 my-3 ml-2">
