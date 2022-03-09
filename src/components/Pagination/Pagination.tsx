@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { changePageByOne } from "../../Store/ApiUrl";
 import PaginationNumber from "./PaginationNumberButton";
 
-const getPageNumbers = (totalPage:number):number[]=> {
+const getPageNumbers = (totalPage:number):number[] => {
   const res:number[] =[]
 
   for (let i = 1; i <= Math.min(totalPage,3); i++) {
