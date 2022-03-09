@@ -21,12 +21,14 @@ export const testimonialSlice = createSlice({
         state.page = state.page + action.payload
       },
       changeOrder: (state, action) => {
-          state.order = action.payload
+        state.page = 1;
+        state.order = action.payload
       },
       getTotalPage: (state, action) => {
         state.totalPage = action.payload
       },
       changeTrack: (state, action) => {
+        state.page = 1
         state.track = action.payload
       },
       changePageByPayload: (state,action) => {
