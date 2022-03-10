@@ -27,7 +27,7 @@ const Pagination = () => {
     <div className="h-20 flex flex-row border-t border-solid border-t-2">
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
         <button
-          className="previous h-1/2 w-32 flex flex-row shadow drop-shadow-2xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
+          className="previous h-1/2 w-32 flex flex-row rounded-md shadow shadow-buttonRB disabled:bg-button-disabled disabled:cursor-not-allowed disabled:shadow-none"
           onClick={() => dispatch(changePageByOne(-1))}
           disabled={page === 1 || totalPage === 0}
         >
@@ -45,7 +45,7 @@ const Pagination = () => {
               d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>
-          <p className="font-Poppins text-sm font-normal w-20 my-3">Previous</p>
+          <p className="font-Poppins text-sm font-semibold w-20 my-3">Previous</p>
         </button>
       </div>
 
@@ -63,11 +63,11 @@ const Pagination = () => {
 
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
         <button
-          className="previous h-2/4 w-24 flex flex-row shadow shadow-buttonRB disabled:bg-button-disabled disabled:cursor-not-allowed"
+          className="previous h-2/4 w-24 flex flex-row rounded-md shadow shadow-buttonRB disabled:bg-button-disabled disabled:cursor-not-allowed disabled:shadow-none"
           onClick={() => dispatch(changePageByOne(1))}
           disabled={totalPage === page || totalPage === 0}
         >
-          <p className="font-Poppins text-sm font-normal w-14 my-3 ml-2">
+          <p className="font-Poppins text-sm font-semibold w-14 my-3 ml-2">
             Next
           </p>
           <svg
