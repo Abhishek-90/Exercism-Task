@@ -27,7 +27,20 @@ const TrackFilter = () => {
 
     const fetchTracksCaller = async () => {
       const res = await fetchTracks()
-      const tempArr:IOption[] = []
+      const tempArr:IOption[] = [{
+        value: "",
+        label: (
+          <div 
+            className="grid items-center h-12 w-x-0"
+          >
+            <img
+              className="h-12 p-0"
+              src={require("../../constants/symbolHexagon.jpg")}
+              alt="Symbol"
+            />
+          </div>
+        ),
+      }]
       res.forEach((item:any) => {
         const temp:IOption = {
           value: item.slug,

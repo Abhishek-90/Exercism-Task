@@ -9,7 +9,7 @@ function App() {
     <>
       <NavigationBar />
       <StaticContent/>
-      <div className="flex justify-center px-4">
+      <div className="flex justify-center px-8">
         <TestimonialsList />
       </div>
     </>
