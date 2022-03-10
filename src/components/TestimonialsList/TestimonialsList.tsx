@@ -6,6 +6,7 @@ import { ITestimonials } from "../../interfaces/testimonials";
 import { getTestimonials } from "./GetTestimonials";
 import { useDispatch, useSelector } from "react-redux";
 import { getTotalPage } from '../../Store/ApiUrl'
+import NoTestimonials from "../StaticComponent/NoTestimonials";
 
 const TestimonialsList = () => {
 
@@ -24,9 +25,13 @@ const TestimonialsList = () => {
   },[page, order, track, exercise])
 
   return (
+    
     <div className="testimonials-list rounded-lg my-4 w-screen border-b-2 border-solid border-slate-200 shadow-3xl">
       <Filters/>
-      {testimonials.map((item) => {
+      {testimonials.length === 0 ? 
+        <NoTestimonials/>
+      :
+      testimonials.map((item) => {
         return (
           <TestimonialItem
             key={item.id}
