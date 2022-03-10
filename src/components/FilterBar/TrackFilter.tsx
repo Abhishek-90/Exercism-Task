@@ -58,8 +58,8 @@ const TrackFilter = () => {
               className="grid items-center h-12 w-x-0"
             >
               <img
-                className="h-8 p-0"
-                src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/logo-42e9b829cf6816496069a62608cb51e7c13624bd.svg"
+                className="h-12 p-0"
+                src={require("../../constants/symbolHexagon.jpg")}
                 alt="Symbol"
               />
             </div>
