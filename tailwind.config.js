@@ -18,6 +18,7 @@ module.exports = {
         'button' : '#D6D8E4',
         'button-disabled': '#E0E0ED',
         'button-text':'#746E9A',
+        'selected-button-text':'#1A1249',
         'navbar-border': '#CFDAF1',
         'notification':'#ECA944',
         'navbar-text':'#5F588B',
