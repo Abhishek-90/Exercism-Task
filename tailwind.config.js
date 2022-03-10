@@ -32,6 +32,7 @@ module.exports = {
       },
       boxShadow: {
         '3xl': '10px 15px 60px 30px rgba(232,236,247, 1)',
+        'buttonRB': '1px 1px 0px 3px rgb(213,216,228)',
       },
       saturate: {
         1618:'18.18',
@@ -41,7 +42,6 @@ module.exports = {
       },
       borderWidth:{
         '3':'3px',
-        // '2':'2px'
       }
     },
   },

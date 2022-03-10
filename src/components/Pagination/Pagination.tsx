@@ -63,7 +63,7 @@ const Pagination = () => {
 
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
         <button
-          className="previous h-2/4 w-24 flex flex-row shadow drop-shadow-3xl shadow-button disabled:bg-button-disabled disabled:cursor-not-allowed"
+          className="previous h-2/4 w-24 flex flex-row shadow shadow-buttonRB disabled:bg-button-disabled disabled:cursor-not-allowed"
           onClick={() => dispatch(changePageByOne(1))}
           disabled={totalPage === page || totalPage === 0}
         >
