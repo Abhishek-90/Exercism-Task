@@ -31,7 +31,7 @@ module.exports = {
         Poppins:["Poppins", "sans-serif"],
       },
       boxShadow: {
-        '3xl': '10px 20px 30px 60px rgba(232,236,247, 0.7)',
+        '3xl': '10px 15px 60px 30px rgba(232,236,247, 1)',
       },
       saturate: {
         1618:'18.18',
