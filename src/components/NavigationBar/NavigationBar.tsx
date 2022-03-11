@@ -7,6 +7,7 @@ const NavigationBar = () => {
         <div className="exercism-logo ml-8 grid items-center">
           <a href="/">
             <img
+              className="h-1/2 w-36"
               src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/exercism-with-logo-black-b427c06c6a068ba9f391734115e4d22dfa876d1d.svg"
               alt="exercism-logo"
             />
