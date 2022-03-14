@@ -26,7 +26,7 @@ const NavigationBar = () => {
         <div className="dashboard-link grid items-center ">
           <a className="flex flex-row space-x-2 ml-4" href="/">
             <img
-              className="h-6 w-6 hue-rotate-60"
+              className="h-6 w-6"
               src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/tracks-2e780b460e113a9b07ce4446c988a31c40547b00.svg"
               alt="mentor Logo"
             />
@@ -50,7 +50,7 @@ const NavigationBar = () => {
         <div className="dashboard-link grid items-center">
           <a className="flex flex-row space-x-4 ml-4" href="/">
             <img
-              className="h-6 w-6 fill-text-navbar-text"
+              className="h-6 w-6"
               src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/contribute-269d926a07a0b503203914911e0a5704469ae8c4.svg"
               alt="contribute-logo"
             />
