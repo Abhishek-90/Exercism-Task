@@ -27,6 +27,7 @@ module.exports = {
         'page-button-focus': '#76709F',
         'focus-button-bg' : '#E1EBFF',
         'search-text': '#625C8E',
+        'notification-bell': '#E79820'
       },
       fontFamily:{
         Poppins:["Poppins", "sans-serif"],
@@ -34,6 +35,7 @@ module.exports = {
       boxShadow: {
         '3xl': '10px 15px 60px 30px rgba(232,236,247, 1)',
         'buttonRB': '1px 1px 0px 3px rgb(213,216,228)',
+        'notification': '1px 1px 60px 1px rgba(231,152,32,0.1)',
       },
       saturate: {
         1618:'18.18',

@@ -58,7 +58,7 @@ const NavigationBar = () => {
             alt="random"
           />
         </div>
-        <div className="notification-picture h-8 w-8 my-4  shadow drop-shadow-2xl grid items-center cursor-pointer">
+        <div className="notification-picture h-8 w-12 my-4 shadow shadow-notification grid items-center flex justify-center cursor-pointer rounded-md">
           <img
             className="h-6 w-8"
             src="https://d24y9kuxp2d7l2.cloudfront.net/icons/notifications-2e6c2d672e24a543905250aefc304f77e88718ff.svg"
