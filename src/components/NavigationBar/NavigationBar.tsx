@@ -24,27 +24,21 @@ const NavigationBar = () => {
             <p className="font-Poppins font-semibold mt-1">Dashboard</p>
           </a>
         </div>
-        <div className="dashboard-link grid items-center ">
-          <CustomIconsLinks
-            src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/tracks-2e780b460e113a9b07ce4446c988a31c40547b00.svg"
-            text="Tracks"
-            alt="tracks-logo"
-          />
-        </div>
-        <div className="dashboard-link grid items-center">
-          <CustomIconsLinks
-            src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/mentoring-4d1e266458e8e3293b94679b92ccea4aa2cdb58b.svg"
-            text="Mentoring"
-            alt="mentor-logo"
-          />
-        </div>
-        <div className="dashboard-link grid items-center">
-          <CustomIconsLinks
-            src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/contribute-269d926a07a0b503203914911e0a5704469ae8c4.svg"
-            text="Contribute"
-            alt="contribute-logo"
-          />
-        </div>
+        <CustomIconsLinks
+          src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/tracks-2e780b460e113a9b07ce4446c988a31c40547b00.svg"
+          text="Tracks"
+          alt="tracks-logo"
+        />
+        <CustomIconsLinks
+          src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/mentoring-4d1e266458e8e3293b94679b92ccea4aa2cdb58b.svg"
+          text="Mentoring"
+          alt="mentor-logo"
+        />
+        <CustomIconsLinks
+          src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/contribute-269d926a07a0b503203914911e0a5704469ae8c4.svg"
+          text="Contribute"
+          alt="contribute-logo"
+        />
       </div>
 
       {/* {----------------------------------------------------------------------------------------------------------------------------} */}

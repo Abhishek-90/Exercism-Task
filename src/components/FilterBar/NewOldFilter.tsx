@@ -12,8 +12,8 @@ const NewOldFilter = () => {
           dispatch(changeOrder(e.target.value));
         }}
       >
-        <option value="oldest_first">Sort by Least Recent</option>
         <option value="newest_first">Sort by Most Recent</option>
+        <option value="oldest_first">Sort by Least Recent</option>
       </select>
     </div>
   );

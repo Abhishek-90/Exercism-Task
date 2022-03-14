@@ -9,7 +9,7 @@ interface ITestimonialUrlProps {
 }
 
 const testimonialUrlProps: ITestimonialUrlProps = {
-    order: 'oldest_first',
+    order: 'newest_first',
     page: 1,
 }
 
