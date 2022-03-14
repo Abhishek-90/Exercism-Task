@@ -1,4 +1,5 @@
 import React from "react";
+import { CustomIconsLinks } from "./CustomIconLinks";
 
 const NavigationBar = () => {
   return (
@@ -24,50 +25,35 @@ const NavigationBar = () => {
           </a>
         </div>
         <div className="dashboard-link grid items-center ">
-          <a className="flex flex-row space-x-2 ml-4" href="/">
-            <img
-              className="h-6 w-6"
-              src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/tracks-2e780b460e113a9b07ce4446c988a31c40547b00.svg"
-              alt="mentor Logo"
-            />
-            <p className="font-Poppins font-semibold text-navbar-text">
-              Tracks
-            </p>
-          </a>
+          <CustomIconsLinks
+            src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/tracks-2e780b460e113a9b07ce4446c988a31c40547b00.svg"
+            text="Tracks"
+            alt="tracks-logo"
+          />
         </div>
         <div className="dashboard-link grid items-center">
-          <a className="flex flex-row space-x-2 ml-4" href="/">
-            <img
-              className="h-6 w-6"
-              src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/mentoring-4d1e266458e8e3293b94679b92ccea4aa2cdb58b.svg"
-              alt="mentor Logo"
-            />
-            <p className="font-Poppins font-semibold text-navbar-text">
-              Mentoring
-            </p>
-          </a>
+          <CustomIconsLinks
+            src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/mentoring-4d1e266458e8e3293b94679b92ccea4aa2cdb58b.svg"
+            text="Mentoring"
+            alt="mentor-logo"
+          />
         </div>
         <div className="dashboard-link grid items-center">
-          <a className="flex flex-row space-x-4 ml-4" href="/">
-            <img
-              className="h-6 w-6"
-              src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/contribute-269d926a07a0b503203914911e0a5704469ae8c4.svg"
-              alt="contribute-logo"
-            />
-            <p className="font-Poppins font-semibold text-navbar-text">
-              Contribute
-            </p>
-          </a>
+          <CustomIconsLinks
+            src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/contribute-269d926a07a0b503203914911e0a5704469ae8c4.svg"
+            text="Contribute"
+            alt="contribute-logo"
+          />
         </div>
       </div>
 
       {/* {----------------------------------------------------------------------------------------------------------------------------} */}
-      
+
       <div className="right-size buttons flex flex-row space-x-12">
         <div className="random-picture  grid items-center ml-48 cursor-pointer">
           <img
             className="h-8 w-10 rounded-full"
-            src={require('../../constants/NavbarMessage.jpg')}
+            src={require("../../constants/NavbarMessage.jpg")}
             alt="random"
           />
         </div>
