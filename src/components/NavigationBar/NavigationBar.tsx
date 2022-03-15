@@ -58,20 +58,45 @@ const NavigationBar = () => {
             alt="random"
           />
         </div>
-        <div className="notification-picture h-8 w-12 my-4 shadow shadow-notification grid items-center flex justify-center cursor-pointer rounded-md">
-          <img
-            className="h-6 w-8"
-            src="https://d24y9kuxp2d7l2.cloudfront.net/icons/notifications-2e6c2d672e24a543905250aefc304f77e88718ff.svg"
-            alt="Notification"
-          />
+        <div className="notification-picture h-8 w-12 my-4 shadow shadow-notification shadow-notification-inner grid items-center flex justify-center cursor-pointer rounded-md ">
+          <svg
+            width="19"
+            height="23"
+            viewBox="0 0 19 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.75 20.0312C7.97828 20.8089 8.69175 21.343 9.50219 21.343C10.3126 21.343 11.0261 20.8089 11.2544 20.0312"
+              stroke="#E48900"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.5 3.625V1.65625"
+              stroke="#E48900"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.5 3.625C13.1244 3.625 16.0625 6.56313 16.0625 10.1875C16.0625 16.3528 17.375 17.4062 17.375 17.4062H1.625C1.625 17.4062 2.9375 15.7298 2.9375 10.1875C2.9375 6.56313 5.87563 3.625 9.5 3.625Z"
+              stroke="#E48900"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
-        <div className="reputation-picture w-24 flex flex-row content-center my-4 rounded-r-full rounded-l-full ring-8 ring-violet-700 bg-black cursor-pointer">
+        <div className="reputation-picture w-32 flex flex-row content-center my-2 cursor-pointer">
           <img
-            className="h-6 w-6 ml-3 mt-1 filter invert"
-            src="https://d24y9kuxp2d7l2.cloudfront.net/icons/reputation-5b5938e36519908ac61075db3b9826307a0f907a.svg"
+            className="h-10 w-full ml-3 mt-1"
+            src={require('../../constants/Reputation.jpg')}
             alt="reputation"
           />
-          <p className="font-Poppins ml-1 mt-1 text-white">300K</p>
         </div>
         <div className="profile-picture  grid items-center cursor-pointer">
           <img
