@@ -27,7 +27,9 @@ module.exports = {
         'page-button-focus': '#76709F',
         'focus-button-bg' : '#E1EBFF',
         'search-text': '#625C8E',
-        'notification-bell': '#E79820'
+        'notification-bell': '#E79820',
+        'gradient-start': '#2200FF',
+        'gradient-end': '#9E00FF'
       },
       fontFamily:{
         Poppins:["Poppins", "sans-serif"],
@@ -37,14 +39,11 @@ module.exports = {
         'buttonRB': '1px 1px 0px 3px rgb(213,216,228)',
         'notification': '1px 1px 75px 1px rgba(231,152,32,0.1)',
       },
-      saturate: {
-        1618:'18.18',
-      },
-      hueRotate: {
-        236: '236deg',
-      },
       borderWidth:{
         '3':'3px',
+      },
+      backgroundImage: {
+        'hero-pattern': "url('constants/ellipse.jpg')",
       }
     },
   },

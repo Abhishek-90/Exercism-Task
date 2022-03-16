@@ -4,7 +4,7 @@ import { CustomIconsLinks } from "./CustomIconLinks";
 const NavigationBar = () => {
   return (
     <div className="navigation w-full h-16 flex flex-row border-b-2 border-solid border-navigation-border ">
-      <div className="right-size links flex flex-row space-x-6">
+      <div className="right-size links flex flex-row space-x-8">
         <div className="exercism-logo ml-8 grid items-center">
           <a href="/">
             <img
@@ -15,13 +15,15 @@ const NavigationBar = () => {
           </a>
         </div>
         <div className="dashboard-link grid items-center ml-2">
-          <a className="flex flex-row space-x-2 ml-4" href="/">
-            <img
-              className="h-8 w-8"
-              src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/dashboard-d6d946e5b42a4aef577066eca7b695641e21130a.svg"
-              alt="mentor Logo"
-            />
-            <p className="font-Poppins font-semibold mt-1">Dashboard</p>
+          <a className="flex flex-row h-12 space-x-2 ml-4" href="/">
+            <div className="dashboard-img grid justify-center flex content-center w-12 h-12 bg-gradient-to-b from-gradient-start to-gradient-end rounded-full">
+              <img
+                className="h-6 w-6 invert"
+                src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/dashboard-d6d946e5b42a4aef577066eca7b695641e21130a.svg"
+                alt="mentor Logo"
+              />
+            </div>
+            <p className="font-Poppins font-semibold mt-3">Dashboard</p>
           </a>
         </div>
         <CustomIconsLinks
@@ -53,7 +55,7 @@ const NavigationBar = () => {
         </div>
         <div className="random-picture  grid items-center cursor-pointer">
           <img
-            className="h-8 w-10 rounded-full"
+            className="h-8 w-12 rounded-full"
             src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzEiIGhlaWdodD0iMjciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExIDQuNzMyYTIgMiAwIDAgMSAyIDBMMjAuMzkyIDlhMiAyIDAgMCAxIDEgMS43MzJ2OC41MzZhMiAyIDAgMCAxLTEgMS43MzJMMTMgMjUuMjY4YTIgMiAwIDAgMS0yIDBMMy42MDggMjFhMiAyIDAgMCAxLTEtMS43MzJ2LTguNTM2YTIgMiAwIDAgMSAxLTEuNzMyTDExIDQuNzMyWiIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSJ1cmwoI2EpIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIyNCIgY3k9IjciIHI9IjUuNSIgZmlsbD0iI0VCNTc1NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiLz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSIxMiIgeTE9IjMiIHgyPSIxMiIgeTI9IjI3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agc3RvcC1jb2xvcj0iIzIwRiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzlFMDBGRiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg=="
             alt="random"
           />
@@ -94,7 +96,7 @@ const NavigationBar = () => {
         <div className="reputation-picture w-32 flex flex-row content-center my-2 cursor-pointer">
           <img
             className="h-10 w-full ml-3 mt-1"
-            src={require('../../constants/Reputation.jpg')}
+            src={require("../../constants/Reputation.jpg")}
             alt="reputation"
           />
         </div>
