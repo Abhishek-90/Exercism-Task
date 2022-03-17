@@ -1,4 +1,5 @@
 import React from "react";
+import { Badge } from "./Badge";
 import { CustomIconsLinks } from "./CustomIconLinks";
 
 const NavigationBar = () => {
@@ -93,12 +94,13 @@ const NavigationBar = () => {
             />
           </svg>
         </div>
-        <div className="reputation-picture w-32 flex flex-row content-center my-2 cursor-pointer">
+        <div className="reputation-picture w-40 flex flex-row content-center my-2 cursor-pointer">
           <img
-            className="h-10 w-full ml-3 mt-1"
+            className="h-8 w-full ml-3 mt-2"
             src={require("../../constants/Reputation.jpg")}
             alt="reputation"
           />
+          <Badge radius="4" leftMargin="24" padding="1"/>
         </div>
         <div className="profile-picture  grid items-center cursor-pointer">
           <img

@@ -29,7 +29,8 @@ module.exports = {
         'search-text': '#625C8E',
         'notification-bell': '#E79820',
         'gradient-start': '#2200FF',
-        'gradient-end': '#9E00FF'
+        'gradient-end': '#9E00FF',
+        'dot': '#D85050',
       },
       fontFamily:{
         Poppins:["Poppins", "sans-serif"],
