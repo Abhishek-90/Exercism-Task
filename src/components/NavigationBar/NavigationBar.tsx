@@ -9,7 +9,7 @@ const NavigationBar = () => {
         <div className="exercism-logo ml-8 grid items-center">
           <a href="/">
             <img
-              className="h-1/2 w-36"
+              className="h-1/2 w-64"
               src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/exercism-with-logo-black-b427c06c6a068ba9f391734115e4d22dfa876d1d.svg"
               alt="exercism-logo"
             />
@@ -93,6 +93,7 @@ const NavigationBar = () => {
               stroke-linejoin="round"
             />
           </svg>
+          <Badge radius="4" padding="0" content="2" leftMargin="8"/>
         </div>
         <div className="reputation-picture w-40 flex flex-row content-center my-2 cursor-pointer">
           <img
