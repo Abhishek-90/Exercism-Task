@@ -46,7 +46,7 @@ const NavigationBar = () => {
 
       {/* {----------------------------------------------------------------------------------------------------------------------------} */}
 
-      {/* <div className="right-size buttons flex flex-row space-x-12">
+      <div className="right-size buttons flex flex-row space-x-12">
         <div className="random-picture  grid items-center cursor-pointer">
           <img
             className="h-8 w-10 rounded-full"
@@ -61,7 +61,7 @@ const NavigationBar = () => {
             alt="random"
           />
         </div>
-        <div className="notification-picture h-8 w-12 my-4 shadow shadow-notification shadow-notification-inner grid items-center flex justify-center cursor-pointer rounded-md ">
+        <div className="notification-picture h-8 w-8 my-4 shadow shadow-notification shadow-notification-inner grid items-center flex justify-center cursor-pointer rounded-md ">
           <svg
             width="19"
             height="23"
@@ -72,36 +72,36 @@ const NavigationBar = () => {
             <path
               d="M7.75 20.0312C7.97828 20.8089 8.69175 21.343 9.50219 21.343C10.3126 21.343 11.0261 20.8089 11.2544 20.0312"
               stroke="#E48900"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M9.5 3.625V1.65625"
               stroke="#E48900"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M9.5 3.625C13.1244 3.625 16.0625 6.56313 16.0625 10.1875C16.0625 16.3528 17.375 17.4062 17.375 17.4062H1.625C1.625 17.4062 2.9375 15.7298 2.9375 10.1875C2.9375 6.56313 5.87563 3.625 9.5 3.625Z"
               stroke="#E48900"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
-          <Badge radius="6" padding="0" content="2" leftMargin="8"/>
+          <Badge radius="5" padding="0" content="2" leftMargin="5.5"/>
         </div>
-        <div className="reputation-picture w-40 flex flex-row content-center my-2 cursor-pointer">
+        <div className="reputation-picture w-24 flex flex-row content-center my-2 cursor-pointer">
           <img
             className="h-8 w-full ml-3 mt-2"
             src={require("../../constants/Reputation.jpg")}
             alt="reputation"
           />
-          <Badge radius="4" leftMargin="24" padding="1"/>
+          <Badge radius="3" leftMargin="20" padding="1"/>
         </div>
         <div className="profile-picture  grid items-center cursor-pointer">
           <img
@@ -117,7 +117,7 @@ const NavigationBar = () => {
             alt="menu"
           />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
