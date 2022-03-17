@@ -93,15 +93,15 @@ const NavigationBar = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <Badge radius="5" padding="0" content="2" leftMargin="5.5"/>
+          <Badge radius="4" padding="0" content="2" leftMargin="4"/>
         </div>
-        <div className="reputation-picture w-24 flex flex-row content-center my-2 cursor-pointer">
+        <div className="reputation-picture w-28 flex flex-row content-center my-2 cursor-pointer">
           <img
             className="h-8 w-full ml-3 mt-2"
             src={require("../../constants/Reputation.jpg")}
             alt="reputation"
           />
-          <Badge radius="3" leftMargin="20" padding="1"/>
+          <Badge radius="3" leftMargin="24" padding="1"/>
         </div>
         <div className="profile-picture  grid items-center cursor-pointer">
           <img
