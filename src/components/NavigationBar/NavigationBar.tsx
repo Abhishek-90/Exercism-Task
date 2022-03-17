@@ -5,11 +5,11 @@ import { CustomIconsLinks } from "./CustomIconLinks";
 const NavigationBar = () => {
   return (
     <div className="navigation w-full h-16 flex flex-row border-b-2 border-solid border-navigation-border ">
-      <div className="right-size links flex flex-row space-x-8">
+      <div className="right-size links flex flex-row space-x-4">
         <div className="exercism-logo ml-8 grid items-center">
           <a href="/">
             <img
-              className="h-1/2 w-64"
+              className="h-1/2 w-36"
               src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/exercism-with-logo-black-b427c06c6a068ba9f391734115e4d22dfa876d1d.svg"
               alt="exercism-logo"
             />
@@ -17,7 +17,7 @@ const NavigationBar = () => {
         </div>
         <div className="dashboard-link grid items-center ml-2">
           <a className="flex flex-row h-12 space-x-2 ml-4" href="/">
-            <div className="dashboard-img grid justify-center flex content-center w-12 h-12 bg-gradient-to-b from-gradient-start to-gradient-end rounded-full">
+            <div className="dashboard-img grid justify-center flex content-center w-10 h-10 mt-1 bg-gradient-to-b from-gradient-start to-gradient-end rounded-full">
               <img
                 className="h-6 w-6 invert"
                 src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/dashboard-d6d946e5b42a4aef577066eca7b695641e21130a.svg"
@@ -46,8 +46,8 @@ const NavigationBar = () => {
 
       {/* {----------------------------------------------------------------------------------------------------------------------------} */}
 
-      <div className="right-size buttons flex flex-row space-x-12">
-        <div className="random-picture  grid items-center ml-48 cursor-pointer">
+      {/* <div className="right-size buttons flex flex-row space-x-12">
+        <div className="random-picture  grid items-center cursor-pointer">
           <img
             className="h-8 w-10 rounded-full"
             src={require("../../constants/NavbarMessage.jpg")}
@@ -93,7 +93,7 @@ const NavigationBar = () => {
               stroke-linejoin="round"
             />
           </svg>
-          <Badge radius="4" padding="0" content="2" leftMargin="8"/>
+          <Badge radius="6" padding="0" content="2" leftMargin="8"/>
         </div>
         <div className="reputation-picture w-40 flex flex-row content-center my-2 cursor-pointer">
           <img
@@ -117,7 +117,7 @@ const NavigationBar = () => {
             alt="menu"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
