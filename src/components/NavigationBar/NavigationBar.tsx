@@ -5,7 +5,7 @@ import { CustomIconsLinks } from "./CustomIconLinks";
 const NavigationBar = () => {
   return (
     <div className="navigation w-full h-16 flex flex-row border-b-2 border-solid border-navigation-border ">
-      <div className="right-size links flex flex-row space-x-4">
+      <div className="right-size links flex flex-row space-x-4 w-8/12">
         <div className="exercism-logo ml-8 grid items-center">
           <a href="/">
             <img
@@ -49,7 +49,7 @@ const NavigationBar = () => {
       <div className="right-size buttons flex flex-row space-x-12">
         <div className="random-picture  grid items-center cursor-pointer">
           <img
-            className="h-8 w-10 rounded-full"
+            className="h-8 w-10"
             src={require("../../constants/NavbarMessage.jpg")}
             alt="random"
           />
@@ -93,7 +93,13 @@ const NavigationBar = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <Badge radius="4" padding="0" content="2" leftMargin="4"/>
+          <Badge
+            radius={5}
+            padding={0}
+            content="2"
+            leftMargin={8}
+            bottomMargin={8}
+          />
         </div>
         <div className="reputation-picture w-28 flex flex-row content-center my-2 cursor-pointer">
           <img
@@ -101,9 +107,9 @@ const NavigationBar = () => {
             src={require("../../constants/Reputation.jpg")}
             alt="reputation"
           />
-          <Badge radius="3" leftMargin="24" padding="1"/>
+          <Badge radius={3} leftMargin={28} padding={0} />
         </div>
-        <div className="profile-picture  grid items-center cursor-pointer">
+        <div className="profile-picture grid items-center cursor-pointer">
           <img
             className="h-12 w-12 rounded-full"
             src="https://avatars.githubusercontent.com/u/43419831?v=4"
