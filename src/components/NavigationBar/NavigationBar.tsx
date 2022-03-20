@@ -61,9 +61,9 @@ const NavigationBar = () => {
             alt="random"
           />
         </div>
-        <div className="notification-picture h-8 w-10 my-4 shadow shadow-notification shadow-notification-inner grid items-center flex justify-center cursor-pointer rounded-md ">
+        <div className="notification-picture h-9 w-12 mt-3.5 shadow shadow-notification shadow-notification-inner grid items-center flex justify-center cursor-pointer rounded-md ">
           <svg
-            width="19"
+            width="23"
             height="23"
             viewBox="0 0 19 23"
             fill="none"
@@ -93,13 +93,9 @@ const NavigationBar = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <Badge
-            radius={4}
-            padding={0}
-            content="2"
-            leftMargin={16}
-            bottomMargin={12}
-          />
+          <div className="absolute ml-8 bg-dot h-6 w-6 rounded-full mb-6 flex justify-center grid items-center">
+            <p className="font-Poppins text-white text-sm">2</p>
+          </div>
         </div>
         <div className="reputation-picture w-32 flex flex-row content-center my-2 cursor-pointer">
           <img
@@ -107,13 +103,8 @@ const NavigationBar = () => {
             src={require("../../constants/Reputation.jpg")}
             alt="reputation"
           />
-          <div
-            className={`absolute p-1 ml-24 bg-white rounded-full mb-12`}
-          >
-            <div
-              className={`rounded-full bg-dot h-3 w-3`}
-            >
-            </div>
+          <div className="absolute p-1 ml-24 bg-white rounded-full mb-12">
+            <div className="rounded-full bg-dot h-3 w-3"></div>
           </div>
         </div>
         <div className="profile-picture grid items-center cursor-pointer">
