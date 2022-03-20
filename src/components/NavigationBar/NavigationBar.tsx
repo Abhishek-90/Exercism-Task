@@ -1,5 +1,4 @@
 import React from "react";
-import { Badge } from "./Badge";
 import { CustomIconsLinks } from "./CustomIconLinks";
 
 const NavigationBar = () => {
