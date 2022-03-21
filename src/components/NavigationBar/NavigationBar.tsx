@@ -60,7 +60,7 @@ const NavigationBar = () => {
             alt="random"
           />
         </div>
-        <div className="notification-picture h-9 w-12 mt-3.5 shadow shadow-notification shadow-notification-inner grid items-center flex justify-center cursor-pointer rounded-md ">
+        <div className="notification-picture h-9 w-12 mt-3.5 shadow shadow-notification grid items-center flex justify-center cursor-pointer rounded-md bg-[#FFF4E3]">
           <svg
             width="23"
             height="23"

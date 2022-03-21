@@ -20,7 +20,6 @@ module.exports = {
         'button-text':'#746E9A',
         'selected-button-text':'#1A1249',
         'navbar-border': '#CFDAF1',
-        'notification':'#ECA944',
         'navbar-text':'#5F588B',
         'static-text':'#130B43',
         'page-button':'#D6D9E4',
@@ -38,7 +37,7 @@ module.exports = {
       boxShadow: {
         '3xl': '10px 15px 60px 30px rgba(232,236,247, 1)',
         'buttonRB': '1px 1px 0px 3px rgb(213,216,228)',
-        'notification': '1px 1px 75px 1px rgba(231,152,32,0.1)',
+        'notification': '1px 1px 70px 1px rgba(0,0,0,0.6)'
       },
       borderWidth:{
         '3':'3px',
