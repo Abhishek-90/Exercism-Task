@@ -92,7 +92,7 @@ const NavigationBar = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <div className="absolute ml-8 bg-dot h-6 w-6 rounded-full mb-6 flex justify-center grid items-center">
+          <div className="absolute ml-8 bg-dot h-6 w-6 rounded-full mb-8 flex justify-center grid items-center">
             <p className="font-Poppins text-white text-sm">2</p>
           </div>
         </div>
