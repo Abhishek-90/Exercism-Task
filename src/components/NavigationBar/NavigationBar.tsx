@@ -17,7 +17,7 @@ const NavigationBar = () => {
         <div className="dashboard-link grid items-center ml-2">
           <a className="flex flex-row h-full space-x-2 ml-4" href="/">
             <div className="wholeLogo h-full w-14 flex justify-center grid content-center">
-              <div className="absolute mt-10">
+              <div className="absolute mt-9">
                 <img src={require('../../constants/polygon.png')} alt="polygon"/>
               </div>
               <div className="absolute ml-11 mt-3">
@@ -78,7 +78,7 @@ const NavigationBar = () => {
 
       {/* {----------------------------------------------------------------------------------------------------------------------------} */}
 
-      <div className="right-size buttons flex flex-row space-x-12">
+      <div className="right-size buttons flex flex-row space-x-8">
         <div className="random-picture  grid items-center cursor-pointer">
           <img
             className="h-8 w-10"
@@ -88,7 +88,7 @@ const NavigationBar = () => {
         </div>
         <div className="random-picture  grid items-center cursor-pointer">
           <img
-            className="h-8 w-12 rounded-full"
+            className="h-8 w-10 rounded-full"
             src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzEiIGhlaWdodD0iMjciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExIDQuNzMyYTIgMiAwIDAgMSAyIDBMMjAuMzkyIDlhMiAyIDAgMCAxIDEgMS43MzJ2OC41MzZhMiAyIDAgMCAxLTEgMS43MzJMMTMgMjUuMjY4YTIgMiAwIDAgMS0yIDBMMy42MDggMjFhMiAyIDAgMCAxLTEtMS43MzJ2LTguNTM2YTIgMiAwIDAgMSAxLTEuNzMyTDExIDQuNzMyWiIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSJ1cmwoI2EpIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIyNCIgY3k9IjciIHI9IjUuNSIgZmlsbD0iI0VCNTc1NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiLz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSIxMiIgeTE9IjMiIHgyPSIxMiIgeTI9IjI3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agc3RvcC1jb2xvcj0iIzIwRiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzlFMDBGRiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg=="
             alt="random"
           />
@@ -135,7 +135,7 @@ const NavigationBar = () => {
             src={require("../../constants/Reputation.jpg")}
             alt="reputation"
           />
-          <div className="absolute p-1 ml-24 bg-white rounded-full mb-12">
+          <div className="absolute p-1 ml-[104px] bg-white rounded-full mb-12">
             <div className="rounded-full bg-dot h-3 w-3"></div>
           </div>
         </div>
