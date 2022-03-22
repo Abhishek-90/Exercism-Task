@@ -58,7 +58,7 @@ const TestimonialItem = ({
           {getDate(date_created)} ago
         </p>
       </div>
-      <div className="next-button h-full w-8 ">
+      <div className="next-button h-full w-8">
         <button className="h-full w-full ">
           <ChevronRightIcon className="text-arrow-color" />
         </button>
