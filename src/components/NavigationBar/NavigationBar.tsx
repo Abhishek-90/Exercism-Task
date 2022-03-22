@@ -15,13 +15,46 @@ const NavigationBar = () => {
           </a>
         </div>
         <div className="dashboard-link grid items-center ml-2">
-          <a className="flex flex-row h-12 space-x-2 ml-4" href="/">
-            <div className="dashboard-img grid justify-center flex content-center w-10 h-10 mt-1 bg-gradient-to-b from-gradient-start to-gradient-end rounded-full">
-              <img
-                className="h-6 w-6 invert"
-                src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/dashboard-d6d946e5b42a4aef577066eca7b695641e21130a.svg"
-                alt="mentor Logo"
-              />
+          <a className="flex flex-row h-full space-x-2 ml-4" href="/">
+            <div className="wholeLogo h-full w-14 flex justify-center grid content-center">
+              <div className="absolute mt-10">
+                <img src={require('../../constants/polygon.png')} alt="polygon"/>
+              </div>
+              <div className="absolute ml-11 mt-3">
+                <img src={require('../../constants/polygon.png')} alt="polygon"/>
+              </div>
+              <div className="absolute ml-11 mt-12">
+                <img
+                  src={require("../../constants/ellipse_23.png")}
+                  alt="right-bottom"
+                />
+              </div>
+              <div className="absolute ml-3 mt-[51px]">
+                <img
+                  src={require("../../constants/ellipse_25.png")}
+                  alt="left-bottom"
+                />
+              </div>
+              <div className="absolute ml-1 mt-5">
+                <img
+                  src={require("../../constants/ellipse_25.png")}
+                  alt="left"
+                />
+              </div>
+              <div className="absolute ml-5 mt-1.5">
+                <img
+                  src={require("../../constants/polygon_19.png")}
+                  alt="right-bottom"
+                />
+              </div>
+
+              <div className="dashboard-img grid justify-center flex content-center w-10 h-10 mt-1 bg-gradient-to-b from-gradient-start to-gradient-end rounded-full">
+                <img
+                  className="h-6 w-6 invert"
+                  src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/dashboard-d6d946e5b42a4aef577066eca7b695641e21130a.svg"
+                  alt="mentor Logo"
+                />
+              </div>
             </div>
             <p className="font-Poppins font-semibold mt-3">Dashboard</p>
           </a>
