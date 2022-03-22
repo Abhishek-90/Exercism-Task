@@ -33,7 +33,7 @@ const Pagination = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 my-3 ml-4"
+            className="h-5 w-5 my-2 ml-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -45,7 +45,7 @@ const Pagination = () => {
               d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>
-          <p className="font-Poppins text-sm font-semibold w-20 my-3">Previous</p>
+          <p className="font-Poppins text-sm font-semibold w-20 my-2">Previous</p>
         </button>
       </div>
 
@@ -67,12 +67,12 @@ const Pagination = () => {
           onClick={() => dispatch(changePageByOne(1))}
           disabled={totalPage === page || totalPage === 0}
         >
-          <p className="font-Poppins text-sm font-semibold w-14 my-3 ml-2">
+          <p className="font-Poppins text-sm font-semibold w-14 my-2 ml-2">
             Next
           </p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 my-3 mr-4"
+            className="h-5 w-5 my-2 mr-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
