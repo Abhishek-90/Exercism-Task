@@ -8,6 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTotalPage } from '../../Store/ApiUrl'
 import NoTestimonials from "../StaticComponent/NoTestimonials";
 
+const doublePages = (totalPage: number) : number => {
+  return (totalPage/10) + (totalPage%10 === 0 ? 0 : 1)
+}
+
 const TestimonialsList = () => {
 
   const [testimonials, setTestimonials] = useState<ITestimonials[]>([])
@@ -17,7 +21,7 @@ const TestimonialsList = () => {
   useEffect(() => {
     const getTestimonialsCaller = async () => {
       const res = await getTestimonials(page,order,track, exercise)
-      dispatch(getTotalPage(res.testimonials.pagination.total_pages))
+      dispatch(getTotalPage(doublePages(res.testimonials.pagination.total_count)))
       setTestimonials(res.testimonials.results)
     }
 
