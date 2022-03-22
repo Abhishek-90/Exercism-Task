@@ -48,7 +48,7 @@ const NavigationBar = () => {
                 />
               </div>
 
-              <div className="dashboard-img grid justify-center flex content-center w-10 h-10 mt-1 bg-gradient-to-b from-gradient-start to-gradient-end rounded-full">
+              <div className="dashboard-img grid justify-center flex content-center w-10 h-10 mt-1 bg-gradient-to-b from-gradient-start to-gradient-end rounded-full shadow shadow-dashboard">
                 <img
                   className="h-6 w-6 invert"
                   src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/dashboard-d6d946e5b42a4aef577066eca7b695641e21130a.svg"

@@ -37,7 +37,8 @@ module.exports = {
       boxShadow: {
         '3xl': '10px 15px 60px 30px rgba(232,236,247, 1)',
         'buttonRB': '1px 1px 0px 3px rgb(213,216,228)',
-        'notification': '1px 0px 8px 4px rgba(235,230,212,1)'
+        'notification': '1px 0px 8px 4px rgba(235,230,212,1)',
+        'dashboard': '1px 1px 13px 5px rgba(192,204,237,1)'
       },
       borderWidth:{
         '3':'3px',
