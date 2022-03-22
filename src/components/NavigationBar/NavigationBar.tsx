@@ -56,7 +56,7 @@ const NavigationBar = () => {
                 />
               </div>
             </div>
-            <p className="font-Poppins font-semibold mt-3">Dashboard</p>
+            <p className="font-Poppins font-semibold mt-5">Dashboard</p>
           </a>
         </div>
         <CustomIconsLinks
