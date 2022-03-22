@@ -15,7 +15,7 @@ const PaginationNumber = (props:{pageNumber: number}) => {
       </button>
       :
       <button
-        className={page !== props.pageNumber ? 'font-Poppins font-semibold text-sm text-button-text py-2 px-3.5 border border-solid rounded-lg border-page-button border-2':'font-Poppins font-semibold text-sm text-selected-button-text py-2 px-3.5 border border-solid rounded-lg border-page-button-focus border-2 bg-focus-button-bg'}
+        className={page !== props.pageNumber ? 'font-Poppins font-semibold text-sm text-button-text py-2 px-3.5 border border-solid rounded-lg border-page-button border-2':'font-Poppins font-semibold text-sm text-selected-button-text py-2 px-3.5 border-2 border-solid rounded-lg border-page-button-focus border-2 bg-focus-button-bg'}
         onClick={() => dispatch(changePageByPayload(props.pageNumber))}
       >
         {props.pageNumber}
