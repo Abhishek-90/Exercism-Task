@@ -4,7 +4,7 @@ import { CustomIconsLinks } from "./CustomIconLinks";
 const NavigationBar = () => {
   return (
     <div className="navigation w-full h-16 flex flex-row border-b-2 border-solid border-navigation-border ">
-      <div className="right-size links flex flex-row space-x-4 w-8/12">
+      <div className="right-size links flex flex-row space-x-2 w-8/12">
         <div className="exercism-logo ml-8 grid items-center">
           <a href="/">
             <img
@@ -78,7 +78,7 @@ const NavigationBar = () => {
 
       {/* {----------------------------------------------------------------------------------------------------------------------------} */}
 
-      <div className="right-size buttons flex flex-row space-x-8">
+      <div className="right-size buttons flex flex-row space-x-6">
         <div className="random-picture  grid items-center cursor-pointer">
           <img
             className="h-8 w-10"
