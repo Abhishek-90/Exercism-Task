@@ -2,7 +2,6 @@
   "name": "exercism-task",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Abhishek-90.github.io/Exercism-Task",
   "dependencies": {
     "@heroicons/react": "^1.0.5",
     "@reduxjs/toolkit": "^1.8.0",

@@ -8,8 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTotalPage } from '../../Store/ApiUrl'
 import NoTestimonials from "../StaticComponent/NoTestimonials";
 
-const doublePages = (totalPage: number) : number => {
-  return (totalPage/10) + (totalPage%10 === 0 ? 0 : 1)
+const doublePages = (totalCount: number) : number => {
+  return (totalCount/10) + (totalCount%10 === 0 ? 0 : 1)
 }
 
 const getTenTestimonials = (testimonials:ITestimonials[], page:number) : ITestimonials[] => {
