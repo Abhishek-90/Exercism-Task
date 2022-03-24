@@ -13,60 +13,60 @@ const getPageNumbers = (
   siblings: number,
   page: number
 ): number[] => {
-  const res: number[] = [];
+  const res: number[] = []
 
-  const totalPageNumbers = siblings + 5;
+  const totalPageNumbers = siblings + 5
 
   if (totalPageNumbers >= totalPage) {
     for (let i = 1; i <= totalPage; i++) {
-      res.push(i);
+      res.push(i)
     }
-    return res;
+    return res
   }
 
   /*
     	Calculate left and right sibling index and make sure they are within range 1 and totalPageCount
     */
-  const leftSiblingIndex = Math.max(page - siblings, 1);
-  const rightSiblingIndex = Math.min(page + siblings, totalPage);
+  const leftSiblingIndex = Math.max(page - siblings, 1)
+  const rightSiblingIndex = Math.min(page + siblings, totalPage)
 
   /*
         We do not show dots just when there is just one page number to be inserted between the extremes of sibling and the page limits i.e 1 and totalPageCount. Hence we are using leftSiblingIndex > 2 and rightSiblingIndex < totalPageCount - 2
       */
-  const shouldShowLeftDots = leftSiblingIndex > 2;
-  const shouldShowRightDots = rightSiblingIndex < totalPage - 2;
+  const shouldShowLeftDots = leftSiblingIndex > 2
+  const shouldShowRightDots = rightSiblingIndex < totalPage - 2
 
-  const firstPageIndex = 1;
-  const lastPageIndex = totalPage;
+  const firstPageIndex = 1
+  const lastPageIndex = totalPage
 
   /*
         Case 2: No left dots to show, but rights dots to be shown
       */
   if (!shouldShowLeftDots && shouldShowRightDots) {
-    let leftItemCount = 3 + 2 * siblings;
-    let leftRange = range(1, leftItemCount);
+    let leftItemCount = 3 + 2 * siblings
+    let leftRange = range(1, leftItemCount)
 
-    return [...leftRange, 0, totalPage];
+    return [...leftRange, 0, totalPage]
   }
 
   /*
         Case 3: No right dots to show, but left dots to be shown
       */
   if (shouldShowLeftDots && !shouldShowRightDots) {
-    let rightItemCount = 3 + 2 * siblings;
-    let rightRange = range(totalPage - rightItemCount + 1, totalPage);
-    return [firstPageIndex, 0, ...rightRange];
+    let rightItemCount = 3 + 2 * siblings
+    let rightRange = range(totalPage - rightItemCount + 1, totalPage)
+    return [firstPageIndex, 0, ...rightRange]
   }
 
   /*
         Case 4: Both left and right dots to be shown
       */
   if (shouldShowLeftDots && shouldShowRightDots) {
-    let middleRange = range(leftSiblingIndex, rightSiblingIndex);
-    return [firstPageIndex, 0, ...middleRange, 0, lastPageIndex];
+    let middleRange = range(leftSiblingIndex, rightSiblingIndex)
+    return [firstPageIndex, 0, ...middleRange, 0, lastPageIndex]
   }
 
-  return res;
+  return res
 };
 
 const Pagination = () => {

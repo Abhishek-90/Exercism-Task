@@ -21,7 +21,7 @@ const TestimonialItem = ({
   exercise_title,
 }: ITestimonials) => {
   return (
-    <div className="flex flex-row h-16  hover:bg-hover border-b-2 border-solid border-slate-100">
+    <div className="flex flex-row h-16  hover:bg-hover border-b-2 border-solid border-slate-100 w-full">
       <div className="track-icon ml-4 mr-6 w-15 h-full grid content-center">
         <img className="w-8 h-8" src={track_icon_url} alt="Track_icon" />
       </div>
@@ -58,8 +58,8 @@ const TestimonialItem = ({
           {getDate(date_created)} ago
         </p>
       </div>
-      <div className="next-button h-full w-8">
-        <button className="h-full w-full ">
+      <div className="next-button h-full w-16 grid items-center flex justify-center">
+        <button className="h-10 w-10 ">
           <ChevronRightIcon className="text-arrow-color" />
         </button>
       </div>
