@@ -2,26 +2,36 @@ import { useDispatch, useSelector } from "react-redux";
 import { changePageByOne } from "../../Store/ApiUrl";
 import PaginationNumber from "./PaginationNumberButton";
 
-const getPageNumbers = (totalPage:number):number[]=> {
+const getPageNumbers = (totalPage:number, siblings:number, page:number):number[]=> {
   const res:number[] =[]
 
-  for (let i = 1; i <= Math.min(totalPage,3); i++) {
-    res.push(i)
-  }
+  // for (let i = 1; i <= Math.min(totalPage,3); i++) {
+  //   res.push(i)
+  // }
 
-  if(totalPage > 3) {
-    res.push(0)
-    for (let i = Math.max(totalPage-2,4); i <= totalPage; i++) {
+  // if(totalPage > 3) {
+  //   res.push(0)
+  //   for (let i = Math.max(totalPage-2,4); i <= totalPage; i++) {
+  //     res.push(i)
+  //   }
+  // }
+
+  const totalPageNumbers = siblings + 5;
+
+  if (totalPageNumbers >= totalPage) {
+    for (let i = 1; i <= totalPage; i++) {
       res.push(i)
     }
+    return res
   }
+
   return res
 }
 
 const Pagination = () => {
   const { page, totalPage } = useSelector((state: any) => state.testimonial);
   const dispatch = useDispatch();
-  const pageNumbers: any[] = getPageNumbers(totalPage);
+  const pageNumbers: any[] = getPageNumbers(totalPage,1,page);
 
   return (
     <div className="h-20 flex flex-row border-t border-solid border-t-2">
