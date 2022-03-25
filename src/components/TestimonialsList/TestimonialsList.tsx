@@ -37,7 +37,7 @@ const TestimonialsList = () => {
   },[page, order, track, exercise])
 
   return (
-    <div className="testimonials-list rounded-lg my-4 w-screen shadow-3xl mt-8 mb-16">
+    <div className="testimonials-list rounded-lg w-screen shadow-3xl mt-8 mb-16">
       <Filters/>
       {testimonials.length === 0 ? 
         <NoTestimonials/>

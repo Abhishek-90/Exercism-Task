@@ -21,18 +21,18 @@ const TestimonialItem = ({
   exercise_title,
 }: ITestimonials) => {
   return (
-    <div className="flex flex-row justify-around h-16  hover:bg-hover border-b-2 border-solid border-slate-100 w-full">
-      <div className="track-icon ml-4 mr-6 w-[2.3rem] h-full grid content-center">
+    <div className="flex flex-row justify-around h-16  hover:bg-hover border-b-2 border-solid w-full">
+      <div className="track-icon ml-4 w-[2rem] h-full grid content-center ">
         <img className="w-8 h-8" src={track_icon_url} alt="Track_icon" />
       </div>
-      <div className="avatar w-[3.2rem] mr-6 h-full grid content-center">
+      <div className="avatar w-[3.2rem] h-full grid content-center">
         <img
           className="rounded-full w-full h-12"
           src={avatar_icon_url}
           alt="avatar"
         />
       </div>
-      <div className="reviewer w-4/12 h-full flex flex-col grid content-center">
+      <div className="reviewer w-3/12 h-full flex flex-col grid content-center">
         <p className="font-semibold font-Poppins text-reviewer-name-color">
           {reviewer_name}
         </p>
@@ -58,7 +58,7 @@ const TestimonialItem = ({
           {getDate(date_created)} ago
         </p>
       </div>
-      <div className="next-button h-full w-1/12 grid items-center flex justify-center">
+      <div className="next-button h-full w-[2.6rem] grid items-center flex justify-center">
         <button className="h-[2.3rem] w-[2.3rem]">
           <ChevronRightIcon className="text-arrow-color" />
         </button>
