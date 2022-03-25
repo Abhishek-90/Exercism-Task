@@ -3,12 +3,12 @@ import { CustomIconsLinks } from "./CustomIconLinks";
 
 const NavigationBar = () => {
   return (
-    <div className="navigation w-full h-16 flex flex-row border-b-2 border-solid border-navigation-border ">
-      <div className="right-size links flex flex-row space-x-2 w-8/12">
+    <div className="navigation w-full h-[4rem] flex flex-row border-b-2 border-solid border-navigation-border ">
+      <div className="right-size links flex flex-row space-x-2 w-7/12">
         <div className="exercism-logo ml-8 grid items-center">
           <a href="/">
             <img
-              className="h-1/2 w-36"
+              className="h-1/2 w-[8rem]"
               src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/exercism-with-logo-black-b427c06c6a068ba9f391734115e4d22dfa876d1d.svg"
               alt="exercism-logo"
             />
@@ -83,7 +83,7 @@ const NavigationBar = () => {
       </div>
 
       {/* {----------------------------------------------------------------------------------------------------------------------------} */}
-      <div className="w-4/12 h-full">
+      <div className="w-5/12 h-full">
 
       <div className="float-right">
         <div className="flex flex-row space-x-6">
