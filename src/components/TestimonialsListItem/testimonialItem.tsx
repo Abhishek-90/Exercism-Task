@@ -21,13 +21,13 @@ const TestimonialItem = ({
   exercise_title,
 }: ITestimonials) => {
   return (
-    <div className="flex flex-row h-16  hover:bg-hover border-b-2 border-solid border-slate-100 w-full">
-      <div className="track-icon ml-4 mr-6 w-15 h-full grid content-center">
+    <div className="flex flex-row justify-around h-16  hover:bg-hover border-b-2 border-solid border-slate-100 w-full">
+      <div className="track-icon ml-4 mr-6 w-[2.3rem] h-full grid content-center">
         <img className="w-8 h-8" src={track_icon_url} alt="Track_icon" />
       </div>
-      <div className="avatar w-15 mr-6 h-full grid content-center">
+      <div className="avatar w-[3.2rem] mr-6 h-full grid content-center">
         <img
-          className="rounded-full w-12 h-12"
+          className="rounded-full w-full h-12"
           src={avatar_icon_url}
           alt="avatar"
         />
@@ -53,13 +53,13 @@ const TestimonialItem = ({
           {content}
         </p>
       </div>
-      <div className="creation-date h-full w-36 grid content-center text-right">
-        <p className="text-sm text-date-created-color font-Poppins font-semibold mr-6">
+      <div className="creation-date h-full w-1/12 grid content-center text-right">
+        <p className="text-sm text-date-created-color font-Poppins font-semibold mr-[1.2rem]">
           {getDate(date_created)} ago
         </p>
       </div>
-      <div className="next-button h-full w-16 grid items-center flex justify-center">
-        <button className="h-10 w-10 ">
+      <div className="next-button h-full w-1/12 grid items-center flex justify-center">
+        <button className="h-[2.3rem] w-[2.3rem]">
           <ChevronRightIcon className="text-arrow-color" />
         </button>
       </div>
