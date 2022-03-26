@@ -53,7 +53,7 @@ const TestimonialItem = ({
           {content}
         </p>
       </div>
-      <div className="creation-date h-full w-1/12 grid content-center text-right">
+      <div className="creation-date h-full w-[10rem] grid content-center text-right">
         <p className="text-sm text-date-created-color font-Poppins font-semibold mr-[1.2rem]">
           {getDate(date_created)} ago
         </p>
