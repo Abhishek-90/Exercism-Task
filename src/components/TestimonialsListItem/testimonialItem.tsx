@@ -58,10 +58,21 @@ const TestimonialItem = ({
           {getDate(date_created)} ago
         </p>
       </div>
-      <div className="next-button h-full w-[2.6rem] grid items-center flex justify-center">
-        <button className="h-[2.3rem] w-[2.3rem]">
-          <ChevronRightIcon className="text-arrow-color" />
-        </button>
+      <div className="next-button h-full w-[2rem] grid items-center flex justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-[1.8rem] w-[1.8rem] text-arrow-color"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
       </div>
     </div>
   );
