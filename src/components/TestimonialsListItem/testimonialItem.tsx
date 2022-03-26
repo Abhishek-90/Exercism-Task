@@ -1,5 +1,4 @@
 import React from "react";
-import { ChevronRightIcon } from "@heroicons/react/outline";
 import { getDate } from "./CalculateDate";
 interface ITestimonials {
   track_icon_url: string;

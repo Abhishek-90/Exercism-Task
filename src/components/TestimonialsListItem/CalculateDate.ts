@@ -8,7 +8,7 @@ export const getDate = (date:string) : string => {
         return formatedDate
     }
     
-    formatedDateArray[0] = formatedDateArray[1].charAt(0) === "h" ? "an" : "a"
+    formatedDateArray[0] = formatedDateArray[1] === "hour" ? "an" : "a"
 
     return formatedDateArray.join(" ")
 }
