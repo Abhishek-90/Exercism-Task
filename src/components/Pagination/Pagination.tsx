@@ -43,25 +43,32 @@ const getPageNumbers = (
         Case 2: No left dots to show, but rights dots to be shown
       */
   if (!shouldShowLeftDots && shouldShowRightDots) {
-    let leftItemCount = 3 + 2 * siblings
+    console.log("Right dots")
+    let leftItemCount = 3
     let leftRange = range(1, leftItemCount)
+    let rightRange = range(totalPage-2,totalPage)
 
-    return [...leftRange, 0, totalPage]
+    return [...leftRange, 0, ...rightRange]
   }
 
   /*
         Case 3: No right dots to show, but left dots to be shown
       */
   if (shouldShowLeftDots && !shouldShowRightDots) {
-    let rightItemCount = 3 + 2 * siblings
+    console.log("Left DOts")
+    let rightItemCount = 3
     let rightRange = range(totalPage - rightItemCount + 1, totalPage)
-    return [firstPageIndex, 0, ...rightRange]
+    let leftRange = range(1,3)
+    return [...leftRange, 0, ...rightRange]
   }
 
   /*
         Case 4: Both left and right dots to be shown
       */
   if (shouldShowLeftDots && shouldShowRightDots) {
+    console.log("Both Dots")
+    console.log(leftSiblingIndex)
+    console.log(rightSiblingIndex)
     let middleRange = range(leftSiblingIndex, rightSiblingIndex)
     return [firstPageIndex, 0, ...middleRange, 0, lastPageIndex]
   }
