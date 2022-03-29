@@ -85,16 +85,16 @@ const NavigationBar = () => {
       {/* {----------------------------------------------------------------------------------------------------------------------------} */}
       <div className="w-5/12 h-full">
 
-      <div className="float-right">
-        <div className="flex flex-row space-x-6">
-          <div className="random-picture  grid items-center cursor-pointer">
+      <div className="float-right h-full justify-between">
+        <div className="flex space-x-7 ">
+          <div className="random-picture  grid items-center cursor-pointer mt-1">
             <img
               className="h-8 w-10"
               src={require("../../constants/NavbarMessage.jpg")}
               alt="random"
             />
           </div>
-          <div className="random-picture  grid items-center cursor-pointer">
+          <div className="random-picture  grid items-center cursor-pointer mt-1">
             <img
               className="h-8 w-10 rounded-full"
               src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzEiIGhlaWdodD0iMjciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExIDQuNzMyYTIgMiAwIDAgMSAyIDBMMjAuMzkyIDlhMiAyIDAgMCAxIDEgMS43MzJ2OC41MzZhMiAyIDAgMCAxLTEgMS43MzJMMTMgMjUuMjY4YTIgMiAwIDAgMS0yIDBMMy42MDggMjFhMiAyIDAgMCAxLTEtMS43MzJ2LTguNTM2YTIgMiAwIDAgMSAxLTEuNzMyTDExIDQuNzMyWiIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSJ1cmwoI2EpIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIyNCIgY3k9IjciIHI9IjUuNSIgZmlsbD0iI0VCNTc1NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiLz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSIxMiIgeTE9IjMiIHgyPSIxMiIgeTI9IjI3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agc3RvcC1jb2xvcj0iIzIwRiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzlFMDBGRiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjwvc3ZnPg=="
