@@ -137,13 +137,13 @@ const NavigationBar = () => {
               <p className="font-Poppins text-white text-sm">2</p>
             </div>
           </div>
-          <div className="reputation-picture w-32 flex flex-row content-center my-2 cursor-pointer">
+          <div className="reputation-picture w-24 flex flex-row content-center my-2 cursor-pointer">
             <img
-              className="h-8 w-28 ml-3 mt-2"
+              className="h-9 w-24 ml-3 mt-2"
               src={require("../../constants/Reputation.jpg")}
               alt="reputation"
             />
-            <div className="absolute p-1 ml-[104px] bg-white rounded-full mb-12">
+            <div className="absolute p-1 ml-[94px] bg-white rounded-full mb-12">
               <div className="rounded-full bg-dot h-3 w-3"></div>
             </div>
           </div>
