@@ -8,7 +8,6 @@ const totalPageNumbers = 6
 
 const range = (start: number, end: number) => {
   let length = end - start + 1;
-
   return Array.from({ length }, (_, idx) => idx + start);
 };
 
@@ -19,10 +18,7 @@ const getPageNumbers = (
 ) => {
 
   if (totalPageNumbers >= totalPage) {
-    for (let i = 1; i <= totalPage; i++) {
-      res.push(i);
-    }
-    console.log(res)
+    res.push(...(range(1,totalPage)))
     return res;
   }
 
@@ -44,7 +40,6 @@ const getPageNumbers = (
   if (!shouldShowLeftDots && shouldShowRightDots) {
     let leftRange = range(1, 3);
     let rightRange = range(totalPage - 2, totalPage);
-
     return [...leftRange, DOTS, ...rightRange];
   }
 
@@ -52,17 +47,15 @@ const getPageNumbers = (
         Case 3: No right dots to show, but left dots to be shown
       */
   if (shouldShowLeftDots && !shouldShowRightDots) {
-    console.log("Left DOts");
-    let rightRange = range(totalPage - 2, totalPage);
-    let leftRange = range(1, 3);
-    return [...leftRange, DOTS, ...rightRange];
+    let rightRange = range(totalPage - 2, totalPage)
+    let leftRange = range(1, 3)
+    return [...leftRange, DOTS, ...rightRange]
   }
 
   /*
         Case 4: Both left and right dots to be shown
       */
   if (shouldShowLeftDots && shouldShowRightDots) {
-    console.log("Both")
     let middleRange = range(leftSiblingIndex, rightSiblingIndex);
     return [1, DOTS, ...middleRange, DOTS, totalPage];
   }
