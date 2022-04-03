@@ -2,9 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { changePageByOne } from "../../Store/ApiUrl";
 import PaginationNumber from "./PaginationNumberButton";
 
-const range = (start:number, end:number) => {
+const DOTS: number = 0
+const res: number[] = []
+const totalPageNumbers = 6
+
+const range = (start: number, end: number) => {
   let length = end - start + 1;
-  
+
   return Array.from({ length }, (_, idx) => idx + start);
 };
 
@@ -12,68 +16,58 @@ const getPageNumbers = (
   totalPage: number,
   siblings: number,
   page: number
-): number[] => {
-  const res: number[] = []
-
-  const totalPageNumbers = siblings + 5
+) => {
 
   if (totalPageNumbers >= totalPage) {
     for (let i = 1; i <= totalPage; i++) {
-      res.push(i)
+      res.push(i);
     }
-    return res
+    console.log(res)
+    return res;
   }
 
   /*
     	Calculate left and right sibling index and make sure they are within range 1 and totalPageCount
     */
-  const leftSiblingIndex = Math.max(page - siblings, 1)
-  const rightSiblingIndex = Math.min(page + siblings, totalPage)
+  const leftSiblingIndex = Math.max(page - siblings, 1);
+  const rightSiblingIndex = Math.min(page + siblings, totalPage);
 
   /*
         We do not show dots just when there is just one page number to be inserted between the extremes of sibling and the page limits i.e 1 and totalPageCount. Hence we are using leftSiblingIndex > 2 and rightSiblingIndex < totalPageCount - 2
       */
-  const shouldShowLeftDots = leftSiblingIndex > 2
-  const shouldShowRightDots = rightSiblingIndex < totalPage - 2
-
-  const firstPageIndex = 1
-  const lastPageIndex = totalPage
+  const shouldShowLeftDots = page > 3;
+  const shouldShowRightDots = page < totalPage - 3;
 
   /*
         Case 2: No left dots to show, but rights dots to be shown
       */
   if (!shouldShowLeftDots && shouldShowRightDots) {
-    console.log("Right dots")
-    let leftItemCount = 3
-    let leftRange = range(1, leftItemCount)
-    let rightRange = range(totalPage-2,totalPage)
+    let leftRange = range(1, 3);
+    let rightRange = range(totalPage - 2, totalPage);
 
-    return [...leftRange, 0, ...rightRange]
+    return [...leftRange, DOTS, ...rightRange];
   }
 
   /*
         Case 3: No right dots to show, but left dots to be shown
       */
   if (shouldShowLeftDots && !shouldShowRightDots) {
-    console.log("Left DOts")
-    let rightItemCount = 3
-    let rightRange = range(totalPage - rightItemCount + 1, totalPage)
-    let leftRange = range(1,3)
-    return [...leftRange, 0, ...rightRange]
+    console.log("Left DOts");
+    let rightRange = range(totalPage - 2, totalPage);
+    let leftRange = range(1, 3);
+    return [...leftRange, DOTS, ...rightRange];
   }
 
   /*
         Case 4: Both left and right dots to be shown
       */
   if (shouldShowLeftDots && shouldShowRightDots) {
-    console.log("Both Dots")
-    console.log(leftSiblingIndex)
-    console.log(rightSiblingIndex)
-    let middleRange = range(leftSiblingIndex, rightSiblingIndex)
-    return [firstPageIndex, 0, ...middleRange, 0, lastPageIndex]
+    console.log("Both")
+    let middleRange = range(leftSiblingIndex, rightSiblingIndex);
+    return [1, DOTS, ...middleRange, DOTS, totalPage];
   }
 
-  return res
+  return res;
 };
 
 const Pagination = () => {
