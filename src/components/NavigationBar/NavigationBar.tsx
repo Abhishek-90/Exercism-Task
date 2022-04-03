@@ -87,7 +87,7 @@ const NavigationBar = () => {
 
       <div className="float-right h-full justify-between">
         <div className="flex space-x-7 ">
-          <div className="random-picture  grid items-center cursor-pointer mt-1">
+          <div className="random-picture grid items-center cursor-pointer mt-1">
             <img
               className="h-8 w-10"
               src={require("../../constants/NavbarMessage.jpg")}
@@ -139,7 +139,7 @@ const NavigationBar = () => {
           </div>
           <div className="reputation-picture w-24 flex flex-row content-center my-2 cursor-pointer">
             <img
-              className="h-9 w-24 ml-3 mt-2"
+              className="h-9 w-24 ml-3 mt-1"
               src={require("../../constants/Reputation.jpg")}
               alt="reputation"
             />
