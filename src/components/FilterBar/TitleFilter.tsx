@@ -1,10 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Dispatch } from 'redux'
 import { changeExercise } from "../../Store/ApiUrl";
 
-var timerID:any = undefined
+var timerID:ReturnType<typeof setTimeout>
 
-const searchFunction = (keyword:string, dispatch:any) => {
+const searchFunction = (keyword:string, dispatch:Dispatch) => {
   clearTimeout(timerID)
   timerID = setTimeout(() => {
     dispatch(changeExercise(keyword))
