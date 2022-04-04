@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Filters } from "../FilterBar/Filters";
-import { Pagination } from "../Pagination/Pagination";
 import { TestimonialItem } from "../TestimonialsListItem/testimonialItem";
 import { ITestimonials } from "../../interfaces/testimonials";
 import { getTestimonials } from "./GetTestimonials";
@@ -25,27 +23,25 @@ const TestimonialsList = () => {
   },[page, order, track, exercise])
 
   return (
-    <div className="testimonials-list rounded-lg w-screen shadow-3xl mt-8 mb-16">
-      <Filters/>
-      {testimonials.length === 0 ? 
+      testimonials.length === 0 ? 
         <NoTestimonials/>
       :
-      testimonials.map((item) => {
+      <>
+      {testimonials.map((item) => {
         return (
           <TestimonialItem
-            key={item.id}
-            track_icon_url={item.track.icon_url}
-            avatar_icon_url={item.mentor.avatar_url}
-            content={item.content}
-            reviewer_name={item.mentor.handle}
-            track_name={item.track.title}
-            date_created={item.created_at}
-            exercise_title={item.exercise.title}
+          key={item.id}
+          track_icon_url={item.track.icon_url}
+          avatar_icon_url={item.mentor.avatar_url}
+          content={item.content}
+          reviewer_name={item.mentor.handle}
+          track_name={item.track.title}
+          date_created={item.created_at}
+          exercise_title={item.exercise.title}
           />
-        );
-      })}
-      <Pagination/>
-    </div>
+          );
+        })}
+      </>
   );
 };
 

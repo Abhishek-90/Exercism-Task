@@ -8,6 +8,7 @@ var timerID:ReturnType<typeof setTimeout>
 const searchFunction = (keyword:string, dispatch:Dispatch) => {
   clearTimeout(timerID)
   timerID = setTimeout(() => {
+    console.log("Called")
     dispatch(changeExercise(keyword))
   },500)
 }
@@ -22,6 +23,7 @@ const TitleFilter = () => {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
+        onClick={()=>{}}
       >
         <path
           strokeLinecap="round"
@@ -30,8 +32,6 @@ const TitleFilter = () => {
           d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
         />
       </svg>
-      {/* Search Filter onChange to be implemented  */}
-
       <input
         type="text"
         className="search-box bg-filters-color font-Poppins rounded-lg h-full w-full text-search-text font-medium pl-4 outline-none"

@@ -13,10 +13,8 @@ const range = (start: number, end: number) => {
 
 const getPageNumbers = (
   totalPage: number,
-  siblings: number,
   page: number
 ) => {
-  console.log(totalPage, siblings, page);
   if (totalPageNumbers >= totalPage) {
     res.push(...(range(1,totalPage)))
     return res;
@@ -25,8 +23,8 @@ const getPageNumbers = (
   /*
     	Calculate left and right sibling index and make sure they are within range 1 and totalPageCount
     */
-  const leftSiblingIndex = Math.max(page - siblings, 1);
-  const rightSiblingIndex = Math.min(page + siblings, totalPage);
+  const leftSiblingIndex = Math.max(page - 1, 1);
+  const rightSiblingIndex = Math.min(page + 1, totalPage);
 
   /*
         We do not show dots just when there is just one page number to be inserted between the extremes of sibling and the page limits i.e 1 and totalPageCount. Hence we are using leftSiblingIndex > 2 and rightSiblingIndex < totalPageCount - 2
@@ -66,8 +64,8 @@ const getPageNumbers = (
 const Pagination = () => {
   const { page, totalPage } = useSelector((state: any) => state.testimonial);
   const dispatch = useDispatch();
-  const pageNumbers: number[] = getPageNumbers(totalPage, 1, page);
-
+  const pageNumbers: number[] = getPageNumbers(totalPage,page);
+  console.log("Added")
   return (
     <div className="h-20 flex flex-row border-t border-solid border-t-2">
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
@@ -99,6 +97,7 @@ const Pagination = () => {
       <div className="page-number w-4/6 grid items-center flex justify-center">
         <div className="inner-page-number flex flex-row space-x-4">
           {pageNumbers.map((item) => {
+            console.log(item)
             return <PaginationNumber key={item} pageNumber={item} />;
           })}
         </div>
