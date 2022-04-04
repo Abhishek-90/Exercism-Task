@@ -2,7 +2,14 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { changeExercise } from "../../Store/ApiUrl";
 
+var timerID:any = undefined
 
+const searchFunction = (keyword:string, dispatch:any) => {
+  clearTimeout(timerID)
+  timerID = setTimeout(() => {
+    dispatch(changeExercise(keyword))
+  },500)
+}
 
 const TitleFilter = () => {
   const dispatch = useDispatch()
@@ -28,7 +35,7 @@ const TitleFilter = () => {
         type="text"
         className="search-box bg-filters-color font-Poppins rounded-lg h-full w-full text-search-text font-medium pl-4 outline-none"
         placeholder="Filter by excercise title"
-        onChange={(e)=>dispatch(changeExercise(e.target.value))}
+        onChange={(e)=>searchFunction(e.target.value, dispatch)}
       />
     </div>
   );
