@@ -19,7 +19,6 @@ const getPageNumbers = (
   page: number
 ) => {
   if(totalPage === 0) {
-    console.log("No")
     return []
   }
 
@@ -81,7 +80,6 @@ const Pagination = () => {
       <div className="page-number w-4/6 grid items-center flex justify-center">
         <div className="inner-page-number flex flex-row space-x-4">
           {pageNumbers.map((item) => {
-            console.log(item)
             return <PaginationNumber key={item} pageNumber={item} />;
           })}
         </div>
