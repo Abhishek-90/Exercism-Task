@@ -34,6 +34,14 @@ const getPageNumbers = (
     return [...leftRange, DOTS, ...rightRange]
   }
 
+  if(page === 4) {
+    return [1,DOTS,...(range(4,6)),DOTS,totalPage]
+  }
+
+  if(page === totalPage-3) {
+    return [1,DOTS,...(range(totalPage-5,totalPage-3)),DOTS,totalPage]
+  }
+
   return [1, DOTS, ...(range(page-1,page+1)),DOTS, totalPage]
 };
 
