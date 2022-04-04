@@ -16,7 +16,7 @@ const getPageNumbers = (
   siblings: number,
   page: number
 ) => {
-
+  console.log(totalPage, siblings, page);
   if (totalPageNumbers >= totalPage) {
     res.push(...(range(1,totalPage)))
     return res;
@@ -66,7 +66,7 @@ const getPageNumbers = (
 const Pagination = () => {
   const { page, totalPage } = useSelector((state: any) => state.testimonial);
   const dispatch = useDispatch();
-  const pageNumbers: any[] = getPageNumbers(totalPage, 1, page);
+  const pageNumbers: number[] = getPageNumbers(totalPage, 1, page);
 
   return (
     <div className="h-20 flex flex-row border-t border-solid border-t-2">
@@ -99,7 +99,7 @@ const Pagination = () => {
       <div className="page-number w-4/6 grid items-center flex justify-center">
         <div className="inner-page-number flex flex-row space-x-4">
           {pageNumbers.map((item) => {
-            return <PaginationNumber key={item} pageNumber={parseInt(item)} />;
+            return <PaginationNumber key={item} pageNumber={item} />;
           })}
         </div>
       </div>
