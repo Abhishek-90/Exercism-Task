@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Dispatch } from 'redux'
 import { changeExercise } from "../../Store/ApiUrl";
@@ -14,6 +14,7 @@ const searchFunction = (keyword:string, dispatch:Dispatch) => {
 
 const TitleFilter = () => {
   const dispatch = useDispatch()
+  const inputRef:any = useRef(HTMLInputElement)
   return (
     <div className="type-search-filter h-12 w-96 my-4 flex flex-row bg-filters-color ml-4 rounded-lg ">
       <svg
@@ -22,7 +23,7 @@ const TitleFilter = () => {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        onClick={()=>{}}
+        onClick={()=>{inputRef.current.focus()}}
       >
         <path
           strokeLinecap="round"
@@ -32,6 +33,7 @@ const TitleFilter = () => {
         />
       </svg>
       <input
+        ref={inputRef}
         type="text"
         className="search-box bg-filters-color font-Poppins rounded-lg h-full w-full text-search-text font-medium pl-4 outline-none"
         placeholder="Filter by excercise title"
