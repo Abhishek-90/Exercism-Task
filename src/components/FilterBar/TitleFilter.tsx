@@ -8,7 +8,6 @@ var timerID:ReturnType<typeof setTimeout>
 const searchFunction = (keyword:string, dispatch:Dispatch) => {
   clearTimeout(timerID)
   timerID = setTimeout(() => {
-    console.log("Called")
     dispatch(changeExercise(keyword))
   },500)
 }

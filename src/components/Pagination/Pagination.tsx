@@ -4,68 +4,43 @@ import PaginationNumber from "./PaginationNumberButton";
 
 const DOTS: number = 0
 const res: number[] = []
-const totalPageNumbers = 6
+const maxPageNumbers = 7
 
 const range = (start: number, end: number) => {
   let length = end - start + 1;
   return Array.from({ length }, (_, idx) => idx + start);
 };
 
+const inRange = (start:number, end:number, page:number) => {
+  return page <= end && page >= start
+}
+
 const getPageNumbers = (
   totalPage: number,
   page: number
 ) => {
-  if (totalPageNumbers >= totalPage) {
+  if(totalPage === 0) {
+    return []
+  }
+  if (maxPageNumbers >= totalPage) {
     res.push(...(range(1,totalPage)))
     return res;
   }
 
-  /*
-    	Calculate left and right sibling index and make sure they are within range 1 and totalPageCount
-    */
-  const leftSiblingIndex = Math.max(page - 1, 1);
-  const rightSiblingIndex = Math.min(page + 1, totalPage);
+  if(inRange(1,3,page) || inRange(totalPage-2, totalPage, page)) {
+    const leftRange = range(1,3)
+    const rightRange = range(totalPage-2,totalPage)
 
-  /*
-        We do not show dots just when there is just one page number to be inserted between the extremes of sibling and the page limits i.e 1 and totalPageCount. Hence we are using leftSiblingIndex > 2 and rightSiblingIndex < totalPageCount - 2
-      */
-  const shouldShowLeftDots = page > 3;
-  const shouldShowRightDots = page < totalPage - 3;
-
-  /*
-        Case 2: No left dots to show, but rights dots to be shown
-      */
-  if (!shouldShowLeftDots && shouldShowRightDots) {
-    let leftRange = range(1, 3);
-    let rightRange = range(totalPage - 2, totalPage);
-    return [...leftRange, DOTS, ...rightRange];
-  }
-
-  /*
-        Case 3: No right dots to show, but left dots to be shown
-      */
-  if (shouldShowLeftDots && !shouldShowRightDots) {
-    let rightRange = range(totalPage - 2, totalPage)
-    let leftRange = range(1, 3)
     return [...leftRange, DOTS, ...rightRange]
   }
 
-  /*
-        Case 4: Both left and right dots to be shown
-      */
-  if (shouldShowLeftDots && shouldShowRightDots) {
-    let middleRange = range(leftSiblingIndex, rightSiblingIndex);
-    return [1, DOTS, ...middleRange, DOTS, totalPage];
-  }
-
-  return res;
+  return [1, DOTS, ...(range(page-1,page+1)),DOTS, totalPage]
 };
 
 const Pagination = () => {
   const { page, totalPage } = useSelector((state: any) => state.testimonial);
   const dispatch = useDispatch();
   const pageNumbers: number[] = getPageNumbers(totalPage,page);
-  console.log("Added")
   return (
     <div className="h-20 flex flex-row border-t border-solid border-t-2">
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
