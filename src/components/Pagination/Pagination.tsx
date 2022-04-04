@@ -3,7 +3,6 @@ import { changePageByOne } from "../../Store/ApiUrl";
 import PaginationNumber from "./PaginationNumberButton";
 
 const DOTS: number = 0
-const res: number[] = []
 const maxPageNumbers = 7
 
 const range = (start: number, end: number) => {
@@ -20,11 +19,12 @@ const getPageNumbers = (
   page: number
 ) => {
   if(totalPage === 0) {
+    console.log("No")
     return []
   }
+
   if (maxPageNumbers >= totalPage) {
-    res.push(...(range(1,totalPage)))
-    return res;
+    return [...(range(1,totalPage))]
   }
 
   if(inRange(1,3,page) || inRange(totalPage-2, totalPage, page)) {
@@ -42,6 +42,7 @@ const getPageNumbers = (
     return [1,DOTS,...(range(totalPage-5,totalPage-3)),DOTS,totalPage]
   }
 
+  console.log("reached")
   return [1, DOTS, ...(range(page-1,page+1)),DOTS, totalPage]
 };
 

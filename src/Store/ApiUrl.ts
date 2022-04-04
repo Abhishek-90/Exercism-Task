@@ -11,6 +11,7 @@ interface ITestimonialUrlProps {
 const testimonialUrlProps: ITestimonialUrlProps = {
     order: 'newest_first',
     page: 1,
+    totalPage:0,
 }
 
 export const testimonialSlice = createSlice({
