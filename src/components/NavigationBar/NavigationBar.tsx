@@ -86,7 +86,7 @@ const NavigationBar = () => {
       <div className="w-5/12 h-full">
 
       <div className="float-right h-full justify-between">
-        <div className="flex space-x-7 ">
+        <div className="flex space-x-8 ">
           <div className="random-picture grid items-center cursor-pointer mt-1">
             <img
               className="h-8 w-10"
