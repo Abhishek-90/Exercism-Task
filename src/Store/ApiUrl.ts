@@ -5,13 +5,15 @@ interface ITestimonialUrlProps {
     page: number,
     track?: string,
     exercise?: string, 
-    totalPage?: number
+    totalPage?: number,
+    isLoading:boolean,
 }
 
 const testimonialUrlProps: ITestimonialUrlProps = {
     order: 'newest_first',
     page: 1,
     totalPage:0,
+    isLoading: true
 }
 
 export const testimonialSlice = createSlice({
@@ -38,9 +40,12 @@ export const testimonialSlice = createSlice({
       changeExercise: (state, action) => {
         state.page = 1
         state.exercise = action.payload
+      },
+      changeLoading: (state, action) => {
+        state.isLoading = action.payload
       }
     }
 })
 
-export const { changePageByOne, changeOrder, getTotalPage,changeTrack, changePageByPayload, changeExercise } = testimonialSlice.actions
+export const { changePageByOne, changeOrder, getTotalPage,changeTrack, changePageByPayload, changeExercise, changeLoading } = testimonialSlice.actions
 export default testimonialSlice.reducer
