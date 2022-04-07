@@ -3,7 +3,7 @@ import { TestimonialItem } from "../TestimonialsListItem/testimonialItem";
 import { ITestimonials } from "../../interfaces/testimonials";
 import { getTestimonials } from "./GetTestimonials";
 import { useDispatch, useSelector } from "react-redux";
-import { getTotalPage, changeLoading } from '../../Store/ApiUrl'
+import { getTotalPage } from '../../Store/ApiUrl'
 import NoTestimonials from "../StaticComponent/NoTestimonials";
 
 const TestimonialsList = () => {
@@ -13,7 +13,6 @@ const TestimonialsList = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(changeLoading(true))
     const getTestimonialsCaller = async () => {
       const res = await getTestimonials(page,order,track, exercise)
       dispatch(getTotalPage(res.testimonials.pagination.total_pages))
@@ -21,7 +20,6 @@ const TestimonialsList = () => {
     }
 
     getTestimonialsCaller()
-    dispatch(changeLoading(false))
   },[page, order, track, exercise])
 
   return (
