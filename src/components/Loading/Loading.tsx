@@ -3,9 +3,9 @@ import loading from './loading.gif'
 const Loading = () => {
   console.log("Loaded")
   return (
-    <>
-      <img src={loading} alt="loading"/>
-    </>
+    <div className="w-full flex justify-center">
+      <img className="" src={loading} alt="loading"/>
+    </div>
   )
 }
 

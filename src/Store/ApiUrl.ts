@@ -43,7 +43,6 @@ export const testimonialSlice = createSlice({
       },
       setIsLoading: (state, action) => {
         state.isLoading = action.payload
-        console.log(state.isLoading)
       }
      
     }
