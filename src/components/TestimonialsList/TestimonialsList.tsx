@@ -4,7 +4,7 @@ import { ITestimonials } from "../../interfaces/testimonials";
 import { getTestimonials } from "./GetTestimonials";
 import { useDispatch, useSelector } from "react-redux";
 import { getTotalPage, setIsLoading } from "../../Store/ApiUrl";
-// import NoTestimonials from "../StaticComponent/NoTestimonials";
+import NoTestimonials from "../StaticComponent/NoTestimonials";
 import Loading from "../Loading/Loading";
 
 const TestimonialsList = () => {
@@ -29,6 +29,7 @@ const TestimonialsList = () => {
   return (
     <>
       {isLoading && <Loading />}
+      {!isLoading && testimonials.length === 0 && <NoTestimonials/>}
       {!isLoading &&
         testimonials.map((item) => {
           return (
