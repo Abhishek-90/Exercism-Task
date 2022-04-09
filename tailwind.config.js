@@ -13,6 +13,7 @@ module.exports = {
         'arrow-color':'#716B99',
         'bg-shadow':'#EBEFF9',
         'filters-color': '#F0F3F9',
+        'filters-color-hover': '#DFF3F9',
         'title-color':'#6A6494',
         'new-old':'#655F90',
         'button' : '#D6D8E4',
@@ -45,6 +46,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern': "url('constants/ellipse.jpg')",
+        'downArrow':"url('./components/FilterBar/Shape.svg')",
       }
     },
   },
