@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { changeOrder } from "../../Store/ApiUrl";
+import styles from "./NewOldFilter.module.css";
 
 const NewOldFilter = () => {
   const dispatch = useDispatch();
+  const [filterValue, setFilterValue] = useState("Most")
   return (
-    <div className="new-old-filter w-80 h-full float-right my-4 mr-6 flex">
-      <select
-        className="bg-filters-color h-full w-full pl-4 font-Poppins text-new-old rounded-lg"
-        onChange={(e) => {
-          dispatch(changeOrder(e.target.value));
-        }}
-        onClick={() => console.log("Select")}
-      >
-        <option value="newest_first">Sort by Most Recent</option>
-        <option value="oldest_first">Sort by Least Recent</option>
-      </select>
+    <div className="new-old-filter w-80 h-full float-right my-4 mr-6">
+      <div className="select-box font-Poppins text-lg text-new-old">
+        <div className="selected">
+          Sort by {filterValue} Recent
+        </div>
+
+        <div className="option-box mt-2">
+          <div className="option">
+            <input onChange={() => {setFilterValue("Most");dispatch(changeOrder("newest_first"))}} className="appearance-none" type="radio" name="NewOld" id="new" value="newest_first" />
+            <label className="cursor-pointer" htmlFor="new">Sort by Most Recent</label>
+          </div>
+          <div className="option">
+            <input onChange={() => {setFilterValue("Least");dispatch(changeOrder("oldest_first"))}} className="appearance-none" type="radio" name="NewOld" id="old" value="oldest_first" />
+            <label className="cursor-pointer" htmlFor="old">Sort by Least Recent</label>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
