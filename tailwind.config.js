@@ -45,6 +45,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern': "url('constants/ellipse.jpg')",
+        'downArrow':"url('./components/FilterBar/Shape.svg')",
       }
     },
   },
