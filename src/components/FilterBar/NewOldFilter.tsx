@@ -5,7 +5,7 @@ import { changeOrder } from "../../Store/ApiUrl";
 const NewOldFilter = () => {
   const dispatch = useDispatch();
   const [filterValue, setFilterValue] = useState("Most");
-  const [active, setActive] = useState<boolean>(false);
+  let [active, setActive] = useState<boolean>(false);
 
   return (
     <div className="new-old-filter w-80 h-full float-right my-4 mr-6">
@@ -13,7 +13,6 @@ const NewOldFilter = () => {
         className={`select-box absolute font-Poppins bg-filters-color w-80 ${
           active ? "h-fit" : "h-12"
         } py-1 px-4 text-md text-new-old rounded-lg`}
-        onFocus={()=>{setActive(true)}}
       >
         <div
           className="selected bg-downArrow bg-no-repeat bg-right cursor-pointer mt-2"
