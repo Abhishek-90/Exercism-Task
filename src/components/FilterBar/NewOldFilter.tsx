@@ -4,19 +4,21 @@ import { changeOrder } from "../../Store/ApiUrl";
 
 const NewOldFilter = () => {
   const dispatch = useDispatch();
-  const [filterValue, setFilterValue] = useState("Most");
+  const [filterValue, setFilterValue] = useState("Most")
+  const [active, setActive] = useState<boolean>(false)
   return (
     <div className="new-old-filter w-80 h-full float-right my-4 mr-6">
       <div className="select-box font-Poppins bg-filters-color py-2 px-4 text-lg text-new-old rounded-lg">
 
-        <div className="selected bg-downArrow bg-no-repeat bg-right cursor-pointer">Sort by {filterValue} Recent</div>
+        <div className="selected bg-downArrow bg-no-repeat bg-right cursor-pointer" onClick={() => {setActive(true)}}>Sort by {filterValue} Recent</div>
 
         <div className="options-container mt-2 transition transition-all duration-200">
           <div className="option">
             <input
-              onChange={() => {
-                setFilterValue("Most");
-                dispatch(changeOrder("newest_first"));
+              onClick={() => {
+                setFilterValue("Most")
+                setActive(false)
+                dispatch(changeOrder("newest_first"))
               }}
               className="appearance-none"
               type="radio"
@@ -30,9 +32,10 @@ const NewOldFilter = () => {
           </div>
           <div className="option">
             <input
-              onChange={() => {
-                setFilterValue("Least");
-                dispatch(changeOrder("oldest_first"));
+              onClick={() => {
+                setFilterValue("Least")
+                setActive(false)
+                dispatch(changeOrder("oldest_first"))
               }}
               className="appearance-none"
               type="radio"
