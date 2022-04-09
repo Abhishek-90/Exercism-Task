@@ -8,12 +8,12 @@ const NewOldFilter = () => {
   const [active, setActive] = useState<boolean>(false)
   return (
     <div className="new-old-filter w-80 h-full float-right my-4 mr-6">
-      <div className="select-box font-Poppins bg-filters-color py-2 px-4 text-lg text-new-old rounded-lg">
+      <div className={`select-box absolute font-Poppins bg-filters-color w-80 ${active ? 'h-fit':'h-12'} py-1 px-4 text-md text-new-old rounded-lg`}>
 
-        <div className="selected bg-downArrow bg-no-repeat bg-right cursor-pointer" onClick={() => {setActive(true)}}>Sort by {filterValue} Recent</div>
+        <div className="selected bg-downArrow bg-no-repeat bg-right cursor-pointer mt-2" onClick={() => {setActive(!active)}}>Sort by {filterValue} Recent</div>
 
-        <div className="options-container mt-2 transition transition-all duration-200">
-          <div className="option">
+        <div className={`options-container mt-2 transition transition-all duration-500 ${active ? "h-fit":"h-0 hidden"}`}>
+          <div className="option p-1 hover:bg-filters-color-hover">
             <input
               onClick={() => {
                 setFilterValue("Most")
@@ -30,7 +30,7 @@ const NewOldFilter = () => {
               Sort by Most Recent
             </label>
           </div>
-          <div className="option">
+          <div className="option p-1 hover:bg-filters-color-hover">
             <input
               onClick={() => {
                 setFilterValue("Least")
@@ -43,7 +43,7 @@ const NewOldFilter = () => {
               id="old"
               value="oldest_first"
             />
-            <label className="cursor-pointer" htmlFor="old">
+            <label className="cursor-pointer w-full" htmlFor="old">
               Sort by Least Recent
             </label>
           </div>
