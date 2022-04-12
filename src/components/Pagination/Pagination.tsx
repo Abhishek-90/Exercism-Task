@@ -42,7 +42,6 @@ const getPageNumbers = (
     return [1,DOTS,...(range(totalPage-5,totalPage-2)),DOTS,totalPage]
   }
 
-  console.log("reached")
   return [1, DOTS, ...(range(page-1,page+2)),DOTS, totalPage]
 }
 
