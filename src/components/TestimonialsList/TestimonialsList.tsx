@@ -29,7 +29,7 @@ const TestimonialsList = () => {
   return (
     <>
       {isLoading && <Loading />}
-      {!isLoading && testimonials.length === 0 && <NoTestimonials/>}
+      {!isLoading && testimonials.length === 0 && <NoTestimonials />}
       {!isLoading &&
         testimonials.map((item) => {
           return (

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changePageByOne } from "../../Store/ApiUrl";
 import PaginationNumber from "./PaginationNumberButton";
@@ -34,21 +35,32 @@ const getPageNumbers = (
   }
 
   if(page === 4) {
-    return [1,DOTS,...(range(4,6)),DOTS,totalPage]
+    return [1,DOTS,...(range(4,7)),DOTS,totalPage]
   }
 
   if(page === totalPage-3) {
-    return [1,DOTS,...(range(totalPage-5,totalPage-3)),DOTS,totalPage]
+    return [1,DOTS,...(range(totalPage-5,totalPage-2)),DOTS,totalPage]
   }
 
   console.log("reached")
-  return [1, DOTS, ...(range(page-1,page+1)),DOTS, totalPage]
-};
+  return [1, DOTS, ...(range(page-1,page+2)),DOTS, totalPage]
+}
 
 const Pagination = () => {
   const { page, totalPage } = useSelector((state: any) => state.testimonial);
   const dispatch = useDispatch();
-  const pageNumbers: number[] = getPageNumbers(totalPage,page);
+  const [pageNumbers, setPageNumbers]= useState<number[]>(getPageNumbers(totalPage,page));
+
+  useEffect(()=> {
+    if(!pageNumbers.includes(page)) {
+      setPageNumbers(getPageNumbers(totalPage,page))
+    }
+  }, [page])
+
+  useEffect(() => {
+    setPageNumbers(getPageNumbers(totalPage,page))
+  }, [totalPage])
+
   return (
     <div className="h-20 flex flex-row border-t border-solid border-t-2">
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
