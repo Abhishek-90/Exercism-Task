@@ -3,61 +3,93 @@ import { useDispatch, useSelector } from "react-redux";
 import { changePageByOne } from "../../Store/ApiUrl";
 import PaginationNumber from "./PaginationNumberButton";
 
-const DOTS: number = 0
-const maxPageNumbers = 7
+const DOTS: string = '...'
 
 const range = (start: number, end: number) => {
   let length = end - start + 1;
   return Array.from({ length }, (_, idx) => idx + start);
 };
 
-const inRange = (start:number, end:number, page:number) => {
-  return page <= end && page >= start
-}
-
-const getPageNumbers = (
-  totalPage: number,
-  page: number
+export const getPaginationNumber = (
+  totalPage:number,
+  siblingCount:number = 1,
+  page:number
 ) => {
-  if(totalPage === 0) {
-    return []
-  }
 
-  if (maxPageNumbers >= totalPage) {
-    return [...(range(1,totalPage))]
-  }
+    // Pages count is determined as siblingCount + firstPage + lastPage + page + 2*DOTS
+    const totalPageNumbers = siblingCount + 5;
 
-  if(inRange(1,3,page) || inRange(totalPage-2, totalPage, page)) {
-    const leftRange = range(1,3)
-    const rightRange = range(totalPage-2,totalPage)
+    /*
+      Case 1:
+      If the number of pages is less than the page numbers we want to show in our
+      paginationComponent, we return the range [1..totalPage]
+    */
+    if (totalPageNumbers >= totalPage) {
+      return range(1, totalPage);
+    }
+	
+    /*
+    	Calculate left and right sibling index and make sure they are within range 1 and totalPage
+    */
+    const leftSiblingIndex = Math.max(page - siblingCount, 1);
+    const rightSiblingIndex = Math.min(
+      page + siblingCount,
+      totalPage
+    );
 
-    return [...leftRange, DOTS, ...rightRange]
-  }
+    /*
+      We do not show dots just when there is just one page number to be inserted between the extremes of sibling and the page limits i.e 1 and totalPage. Hence we are using leftSiblingIndex > 2 and rightSiblingIndex < totalPage - 2
+    */
+    const shouldShowLeftDots = leftSiblingIndex > 2;
+    const shouldShowRightDots = rightSiblingIndex < totalPage - 2;
 
-  if(page === 4) {
-    return [1,DOTS,...(range(4,7)),DOTS,totalPage]
-  }
+    const firstPageIndex = 1;
+    const lastPageIndex = totalPage;
 
-  if(page === totalPage-3) {
-    return [1,DOTS,...(range(totalPage-5,totalPage-2)),DOTS,totalPage]
-  }
+    /*
+    	Case 2: No left dots to show, but rights dots to be shown
+    */
+    if (!shouldShowLeftDots && shouldShowRightDots) {
+      let leftItemCount = 3 + 2 * siblingCount;
+      let leftRange = range(1, leftItemCount);
 
-  return [1, DOTS, ...(range(page-1,page+2)),DOTS, totalPage]
-}
+      return [...leftRange, DOTS, totalPage];
+    }
+
+    /*
+    	Case 3: No right dots to show, but left dots to be shown
+    */
+    if (shouldShowLeftDots && !shouldShowRightDots) {
+      
+      let rightItemCount = 3 + 2 * siblingCount;
+      let rightRange = range(
+        totalPage - rightItemCount + 1,
+        totalPage
+      );
+      return [firstPageIndex, DOTS, ...rightRange];
+    }
+     
+    /*
+    	Case 4: Both left and right dots to be shown
+    */
+      let middleRange = range(leftSiblingIndex, rightSiblingIndex);
+      return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
+
+};
 
 const Pagination = () => {
   const { page, totalPage } = useSelector((state: any) => state.testimonial);
   const dispatch = useDispatch();
-  const [pageNumbers, setPageNumbers]= useState<number[]>(getPageNumbers(totalPage,page));
+  const [pageNumbers, setPageNumbers]= useState<(number|string)[]>(getPaginationNumber(totalPage,1,page));
 
   useEffect(()=> {
     if(!pageNumbers.includes(page)) {
-      setPageNumbers(getPageNumbers(totalPage,page))
+      setPageNumbers(getPaginationNumber(totalPage,1,page))
     }
   }, [page])
 
   useEffect(() => {
-    setPageNumbers(getPageNumbers(totalPage,page))
+    setPageNumbers(getPaginationNumber(totalPage,1,page))
   }, [totalPage])
 
   return (
@@ -90,8 +122,8 @@ const Pagination = () => {
 
       <div className="page-number w-4/6 grid items-center flex justify-center">
         <div className="inner-page-number flex flex-row space-x-4">
-          {pageNumbers.map((item) => {
-            return <PaginationNumber key={item} pageNumber={item} />;
+          {pageNumbers.map((item, index) => {
+            return <PaginationNumber keyValue={index} pageNumber={item} />;
           })}
         </div>
       </div>

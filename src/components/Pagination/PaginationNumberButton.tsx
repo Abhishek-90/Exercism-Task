@@ -2,16 +2,16 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { changePageByPayload } from '../../Store/ApiUrl';
 
-const PaginationNumber = ({ pageNumber }:{pageNumber: number}) => {
+const PaginationNumber = ({ pageNumber, keyValue }:{pageNumber: number|string, keyValue:number}) => {
   const { page } = useSelector((state:any) => state.testimonial)
   const dispatch = useDispatch();
 
   return ( 
-      pageNumber === 0 ? 
+      pageNumber === '...' ? 
       <button
         className="dot border-none px-2"
       >
-        ...
+        {pageNumber}
       </button>
       :
       <button
