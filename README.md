@@ -4,4 +4,4 @@
   <li>Tailwind CSS</li>
 </ul>
 <h2>Deployed</h2>
-[Testimonials](https://dazzling-lebkuchen-34e9da.netlify.app)
+[Testimonials] (https://dazzling-lebkuchen-34e9da.netlify.app)
