@@ -105,6 +105,8 @@ const NavigationBar = () => {
             />
           </div>
           <div className="notification-picture h-9 w-12 mt-3.5 shadow shadow-notification grid items-center flex justify-center cursor-pointer rounded-md bg-[#FFF4E3]">
+            <a href="https://exercism.org/journey/badges#journey-content">
+            
             <svg
               width="23"
               height="23"
@@ -135,8 +137,9 @@ const NavigationBar = () => {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-              />
+                />
             </svg>
+                </a>
             <div className="absolute ml-8 bg-dot h-6 w-6 rounded-full mb-8 flex justify-center grid items-center">
               <p className="font-Poppins text-white text-sm">2</p>
             </div>
