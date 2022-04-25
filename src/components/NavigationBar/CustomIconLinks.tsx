@@ -4,15 +4,16 @@ interface ICustomIconLinks {
   src: string;
   text: string;
   alt: string;
+  address:string
 }
 
-const CustomIconsLinks = (props: ICustomIconLinks) => {
+const CustomIconsLinks = ({src,text,alt,address}: ICustomIconLinks) => {
   return (
     <div className="dashboard-link grid items-center ">
-      <a className="flex flex-row space-x-4 ml-4" href="/">
-        <img className="h-6 w-6" src={props.src} alt={props.alt} />
+      <a className="flex flex-row space-x-4 ml-4" href={address}>
+        <img className="h-6 w-6" src={src} alt={alt} />
         <p className="font-Poppins font-semibold text-navbar-text">
-          {props.text}
+          {text}
         </p>
       </a>
     </div>

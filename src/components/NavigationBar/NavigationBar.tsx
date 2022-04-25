@@ -6,7 +6,7 @@ const NavigationBar = () => {
     <div className="navigation w-full h-[4rem] flex flex-row border-b-2 border-solid border-navigation-border ">
       <div className="right-size links flex flex-row space-x-2 w-7/12">
         <div className="exercism-logo ml-8 grid items-center">
-          <a href="/">
+          <a href="https://exercism.org/dashboard">
             <img
               className="h-1/2 w-[8rem]"
               src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/exercism-with-logo-black-b427c06c6a068ba9f391734115e4d22dfa876d1d.svg"
@@ -15,7 +15,7 @@ const NavigationBar = () => {
           </a>
         </div>
         <div className="dashboard-link grid items-center ml-2">
-          <a className="flex flex-row h-full space-x-2 ml-4" href="/">
+          <a className="flex flex-row h-full space-x-2 ml-4" href="https://exercism.org/dashboard">
             <div className="wholeLogo h-full w-14 flex justify-center grid content-center">
               <div className="absolute mt-9">
                 <img
@@ -69,16 +69,19 @@ const NavigationBar = () => {
           src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/tracks-2e780b460e113a9b07ce4446c988a31c40547b00.svg"
           text="Tracks"
           alt="tracks-logo"
+          address="https://exercism.org/tracks"
         />
         <CustomIconsLinks
           src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/mentoring-4d1e266458e8e3293b94679b92ccea4aa2cdb58b.svg"
           text="Mentoring"
           alt="mentor-logo"
+          address="https://exercism.org/mentoring"
         />
         <CustomIconsLinks
           src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/contribute-269d926a07a0b503203914911e0a5704469ae8c4.svg"
           text="Contribute"
           alt="contribute-logo"
+          address="https://exercism.org/contributing"
         />
       </div>
 
