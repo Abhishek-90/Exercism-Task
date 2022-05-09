@@ -8,14 +8,14 @@ const PaginationNumber = ({ pageNumber, keyValue }:{pageNumber: number|string, k
 
   return ( 
       pageNumber === '...' ? 
-      <button
-        className="dot border-none px-2"
+      <p
+        className="dot border-none px-2 mt-2"
       >
         {pageNumber}
-      </button>
+      </p>
       :
       <button
-        className={page !== pageNumber ? 'font-Poppins font-semibold text-sm text-button-text py-2 px-3.5 border border-solid rounded-lg border-page-button border-2':'font-Poppins font-semibold text-sm text-selected-button-text py-2 px-3.5 border-2 border-solid rounded-lg border-page-button-focus border-2 bg-focus-button-bg'}
+        className={ `font-Poppins font-semibold text-sm py-2 px-3.5 rounded-lg ${page !== pageNumber ? 'border-solid  border text-button-text  border-page-button border-2 hover:bg-focus-button-bg': 'text-selected-button-text border-2 border-page-button-focus border-2 bg-focus-button-bg'}`}
         onClick={() => dispatch(changePageByPayload(pageNumber))}
       >
         {pageNumber}
