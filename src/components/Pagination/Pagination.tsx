@@ -96,7 +96,7 @@ const Pagination = () => {
     <div className="h-20 flex flex-row border-t border-solid border-t-2">
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
         <button
-          className="previous h-1/2 w-32 flex flex-row rounded-md shadow shadow-buttonRB disabled:bg-button-disabled disabled:cursor-not-allowed disabled:shadow-none"
+          className="previous h-1/2 w-32 flex flex-row rounded-md shadow shadow-buttonRB disabled:bg-button-disabled disabled:cursor-not-allowed disabled:shadow-none hover:bg-hover"
           onClick={() => dispatch(changePageByOne(-1))}
           disabled={page === 1 || totalPage === 0}
         >
@@ -130,7 +130,7 @@ const Pagination = () => {
 
       <div className="previous-btn h-full w-1/6 grid items-center flex justify-center">
         <button
-          className="previous h-2/4 w-24 flex flex-row rounded-md shadow shadow-buttonRB disabled:bg-button-disabled disabled:cursor-not-allowed disabled:shadow-none"
+          className="previous h-2/4 w-24 flex flex-row rounded-md shadow shadow-buttonRB hover:bg-button-disabled disabled:bg-button-disabled disabled:cursor-not-allowed disabled:shadow-none hover:bg-hover"
           onClick={() => dispatch(changePageByOne(1))}
           disabled={totalPage === page || totalPage === 0}
         >
