@@ -10,16 +10,14 @@ const NewOldFilter = () => {
   return (
     <div className="new-old-filter w-80 h-full float-right my-4 mr-6">
       <div
-        className={`select-box absolute bg-filters-color w-80 ${
-          active ? "h-fit" : "h-12"
+        className={`select-box absolute bg-filters-color cursor-pointer w-80 ${
+          active ? "h-fit outline outline-2 outline-[#2E57E8]" : "h-12"
         } py-1 px-4 text-md text-new-old rounded-lg`}
+        onClick={() => {
+          setActive(!active);
+        }}
       >
-        <div
-          className="selected bg-downArrow bg-no-repeat bg-right cursor-pointer mt-2"
-          onClick={() => {
-            setActive(!active);
-          }}
-        >
+        <div className="selected bg-downArrow bg-no-repeat bg-right mt-2">
           Sort by {filterValue} Recent
         </div>
 
