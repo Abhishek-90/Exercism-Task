@@ -18,7 +18,6 @@ const TitleFilter = () => {
   const [inputOutline, setInputOutline] = useState(false)
 
   const handleInputClick = (value:boolean) => {
-    console.log("fucos")
     setInputOutline(value)
   }
 
