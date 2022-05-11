@@ -12,8 +12,8 @@ function App() {
     <>
       <NavigationBar />
       <StaticContent />
-      <div className="flex flex-col justify-center px-4">
-        <div className="testimonials-list rounded-lg shadow-3xl mt-8 mb-16">
+      <div className="flex flex-col justify-center px-6">
+        <div className="testimonials-list rounded-lg shadow-l mt-8 mb-16">
           <Filters />
           <TestimonialsList />
           <Pagination />
