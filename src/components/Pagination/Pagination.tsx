@@ -114,7 +114,7 @@ const Pagination = () => {
               d="M10 19l-7-7m0 0l7-7m-7 7h18"
             />
           </svg>
-          <p className="font-Poppins text-sm font-semibold w-20 my-2">
+          <p className=" text-sm font-semibold w-20 my-2">
             Previous
           </p>
         </button>
@@ -134,7 +134,7 @@ const Pagination = () => {
           onClick={() => dispatch(changePageByOne(1))}
           disabled={totalPage === page || totalPage === 0}
         >
-          <p className="font-Poppins text-sm font-semibold w-14 my-2 ml-2">
+          <p className=" text-sm font-semibold w-14 my-2 ml-2">
             Next
           </p>
           <svg

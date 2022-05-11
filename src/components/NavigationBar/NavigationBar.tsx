@@ -64,7 +64,7 @@ const NavigationBar = () => {
                 />
               </div>
             </div>
-            <p className="font-Poppins font-semibold mt-5">Dashboard</p>
+            <p className="font-semibold mt-5">Dashboard</p>
           </a>
         </div>
         <CustomIconsLinks
@@ -142,7 +142,7 @@ const NavigationBar = () => {
                   />
                 </svg>
               <div className="absolute ml-8 bg-dot h-6 w-6 rounded-full mb-8 flex justify-center grid items-center">
-                <p className="font-Poppins text-white text-sm">2</p>
+                <p className=" text-white text-sm">2</p>
               </div>
             </div>
             <div className="reputation-picture w-24 flex flex-row content-center my-2 cursor-pointer">

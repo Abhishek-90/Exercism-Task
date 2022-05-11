@@ -42,7 +42,7 @@ const TitleFilter = () => {
       <input
         ref={inputRef}
         type="text"
-        className="search-box bg-filters-color font-Poppins rounded-lg h-full w-full text-search-text font-medium pl-4"
+        className="search-box bg-filters-color rounded-lg h-full w-full text-search-text font-medium pl-4"
         placeholder="Filter by excercise title"
         onChange={(e)=>searchFunction(e.target.value, dispatch)}
         onFocus={()=>handleInputClick(true)}

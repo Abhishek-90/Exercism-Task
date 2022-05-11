@@ -9,7 +9,7 @@ const StaticContent = () => {
         alt="zigzag"
       />
       <div className="left flex flex-row">
-        <h2 className="font-Poppins text-4xl font-black tracking-wide text-static-text">
+        <h2 className="text-4xl font-black tracking-wide text-static-text">
           Testimonials I've left
         </h2>
         <span className="py-1 px-2 h-8 w-10 ml-3 flex justify-center text-sm border border-solid border-2 rounded-l-2xl rounded-r-2xl border-gray-300 mt-1">

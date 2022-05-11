@@ -10,7 +10,7 @@ const NewOldFilter = () => {
   return (
     <div className="new-old-filter w-80 h-full float-right my-4 mr-6">
       <div
-        className={`select-box absolute font-Poppins bg-filters-color w-80 ${
+        className={`select-box absolute bg-filters-color w-80 ${
           active ? "h-fit" : "h-12"
         } py-1 px-4 text-md text-new-old rounded-lg`}
       >

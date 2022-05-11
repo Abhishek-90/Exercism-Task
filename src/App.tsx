@@ -1,5 +1,3 @@
-import React from "react";
-import "./App.css";
 import { Filters } from "./components/FilterBar/Filters";
 import { NavigationBar } from "./components/NavigationBar/NavigationBar";
 import { Pagination } from "./components/Pagination/Pagination";

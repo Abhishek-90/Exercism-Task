@@ -32,10 +32,10 @@ const TestimonialItem = ({
         />
       </div>
       <div className="reviewer w-3/12 h-full flex flex-col grid content-center">
-        <p className="font-semibold font-Poppins text-reviewer-name-color">
+        <p className="font-semibold  text-reviewer-name-color">
           {reviewer_name}
         </p>
-        <p className="font-normal text-sm font-Poppins text-track-color">
+        <p className="font-normal text-sm  text-track-color">
           on {exercise_title} in {track_name}
         </p>
       </div>
@@ -47,13 +47,13 @@ const TestimonialItem = ({
             overflow: "hidden",
             textOverflow: "ellipsis",
           }}
-          className="font-normal font-Poppins text-content-color"
+          className="font-normal  text-content-color"
         >
           {content}
         </p>
       </div>
       <div className="creation-date h-full w-[10rem] grid content-center text-right">
-        <p className="text-sm text-date-created-color font-Poppins font-semibold mr-[1.2rem]">
+        <p className="text-sm text-date-created-color  font-semibold mr-[1.2rem]">
           {getDate(date_created)} ago
         </p>
       </div>
