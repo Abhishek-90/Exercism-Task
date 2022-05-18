@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { tracks, testimonials } from "../../constants/ApiEndpoint"
 import { changeTrack } from "../../Store/ApiUrl"
 
@@ -38,6 +38,9 @@ const TrackFilterItem = ({
 }: 
 ITrackProps) => {
   const dispatch = useDispatch()
+  const { track } = useSelector(
+    (state: any) => state.testimonial
+  );
   return (
     <div className="flex flex-row h-[58px] text-[16px] cursor-pointer px-[8px] hover:bg-[#F0F3F9]" onClick={() => {dispatch(changeTrack(slug));setImage(icon_url); setTrackVisibility(false)}}>
       <div className="img-name flex flex-row w-80 items-center">
@@ -47,6 +50,7 @@ ITrackProps) => {
           name="track"
           id={title}
           value={slug}
+          checked={slug === track}
           onSelect={() => {dispatch(changeTrack(slug));setImage(icon_url); setTrackVisibility(false)}}
         />
         <img src={icon_url} className="h-[42px] mr-[19px]" alt="alt" />
