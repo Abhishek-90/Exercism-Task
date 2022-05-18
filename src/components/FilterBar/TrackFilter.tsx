@@ -34,8 +34,9 @@ const TrackFilterItem = ({
   count,
 }: // setState,
 ITrackProps) => {
+  const dispatch = useDispatch()
   return (
-    <div className="flex flex-row h-[58px] text-[16px] cursor-pointer hover:bg-[#F0F3F9]">
+    <div className="flex flex-row h-[58px] text-[16px] cursor-pointer hover:bg-[#F0F3F9]" onClick={() => dispatch(changeTrack(slug))}>
       <div className="img-name flex flex-row w-80 items-center">
         <input
           className="h-[21px] w-[21px] mr-[26px]"
