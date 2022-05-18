@@ -1,77 +1,104 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { tracks, testimonials } from "../../constants/ApiEndpoint";
-import { changeTrack } from "../../Store/ApiUrl";
+import axios from "axios"
+import { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
+import { tracks, testimonials } from "../../constants/ApiEndpoint"
+import { changeTrack } from "../../Store/ApiUrl"
 
 interface ITrackProps {
-  title: string;
-  icon_url: string;
-  // count: number;
-  slug: string;
-  // setState: Function;
+  title: string
+  icon_url: string
+  count: number
+  slug: string
+  // setState: Function
+}
+
+async function updateState(setState: Function, state: any) {
+  return new Promise((resolve: Function) => {
+    setState(state, resolve())
+  })
 }
 
 const fetchTracks = async (url: string) => {
   try {
-    const response = await axios.get(url);
-    return response.data;
+    const response = await axios.get(url)
+    return response.data
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-};
+}
 
 const TrackFilterItem = ({
   title,
   slug,
   icon_url,
-}: // count,
-// setState,
+  count,
+}: // setState,
 ITrackProps) => {
   return (
     <div className="flex flex-row h-[58px] text-[16px] cursor-pointer hover:bg-[#F0F3F9]">
       <div className="img-name flex flex-row w-80 items-center">
-      <input className="h-[21px] w-[21px] mr-[26px]" type="radio" name="track" id={title} value={slug} />
-      <img src={icon_url} className="h-[42px] mr-[19px]" alt="alt" />
-      <label htmlFor={title} className="cursor-pointer">
-        {title}
-      </label>
+        <input
+          className="h-[21px] w-[21px] mr-[26px]"
+          type="radio"
+          name="track"
+          id={title}
+          value={slug}
+        />
+        <img src={icon_url} className="h-[42px] mr-[19px]" alt="alt" />
+        <label htmlFor={title} className="cursor-pointer">
+          {title}
+        </label>
       </div>
       <span className="py-1 px-2 h-8 w-10 ml-3 flex justify-center text-sm border border-solid border-2 rounded-l-2xl rounded-r-2xl border-gray-300 mt-1">
-        47
+        {count}
       </span>
     </div>
-  );
-};
+  )
+}
 
 const TrackFilter = () => {
-  const dispatch = useDispatch();
   const [trackImage, setTrackImage] = useState<string>(
     "https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/logo-42e9b829cf6816496069a62608cb51e7c13624bd.svg"
-  );
-  const [trackList, setTrackList] = useState<[]>([]);
-  const [isTrackListVisible, setIsTrackListVisible] = useState<boolean>(false);
+  )
+  const [trackList, setTrackList] = useState<any[]>([])
+  const [testimonialsCountList, setTestimonialsCountList] = useState<any[]>([])
+  const [isTrackListVisible, setIsTrackListVisible] = useState<boolean>(false)
 
   useEffect(() => {
     const fetchTracksCaller = async () => {
-      const tracksList = (await fetchTracks(tracks)).tracks;
-      const testimonialsCountList = (await fetchTracks(testimonials))
-        .testimonials.track_counts;
+      const tracksList = (await fetchTracks(tracks)).tracks
+      const testimonialsCountList = (await fetchTracks(testimonials)).testimonials.track_counts
       const finalTrackList = tracksList.filter(
         (item: any) => testimonialsCountList[item.slug] > 0
-      );
-      setTrackList(finalTrackList);
-    };
+      )
+      await updateState(setTrackList, finalTrackList)
+      await updateState(setTestimonialsCountList, testimonialsCountList)
+    }
 
-    fetchTracksCaller();
-  }, []);
+    fetchTracksCaller()
+  }, [])
 
   return (
     <>
-      {!isTrackListVisible ? (
+      {isTrackListVisible ? 
+        <div
+          className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg outline outline-2 outline-[#2E57E8]"
+          onClick={async () =>
+            await updateState(setIsTrackListVisible, !isTrackListVisible)
+          }
+        >
+          <img
+            className="h-full w-[37.56px]"
+            src={trackImage}
+            alt="trackImage"
+          />
+        </div>
+       : 
         <div
           className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg"
-          onClick={() => setIsTrackListVisible(!isTrackListVisible)}
+          onClick={async () =>
+            await updateState(setIsTrackListVisible, !isTrackListVisible)
+          }
         >
           <svg
             width="38"
@@ -94,79 +121,30 @@ const TrackFilter = () => {
             alt="trackImage"
           />
         </div>
-      ) : (
-        <div
-          className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg outline outline-2 outline-[#2E57E8]"
-          onClick={() => setIsTrackListVisible(!isTrackListVisible)}
-        >
-          <img
-            className="h-full w-[37.56px] "
-            src={trackImage}
-            alt="trackImage"
-          />
-        </div>
-      )}
-      {
-        <div className="trackList absolute mt-20 ml-3 w-[376px] px-[8px] min-h-fit max-h-[364px] overflow-y-scroll bg-[#FFFFFF] rounded-lg outline-[#2E57E8]">
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-          <TrackFilterItem
-            title="Javascript"
-            slug="Javascript"
-            icon_url="https://dg8krxphbh767.cloudfront.net/tracks/javascript.svg"
-          />
-        </div>
       }
+      {isTrackListVisible ? (
+        <div className="trackList absolute mt-20 ml-3 w-[376px] px-[8px] min-h-fit max-h-[364px] overflow-y-scroll bg-[#FFFFFF] rounded-lg outline-[#2E57E8] shadow-l">
+          {trackList.length > 0 ? (
+            trackList.map((track) => {
+              console.log(track)
+              return (
+                <TrackFilterItem
+                  title={track.title}
+                  slug={track.slug}
+                  icon_url={track.icon_url}
+                  count={testimonialsCountList[track.slug]}
+                />
+              )
+            })
+          ) : (
+            <></>
+          )}
+        </div>
+      ) : (
+        <></>
+      )}
     </>
-  );
-};
+  )
+}
 
-export { TrackFilter };
+export { TrackFilter }
