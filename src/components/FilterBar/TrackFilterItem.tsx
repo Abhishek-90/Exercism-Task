@@ -20,6 +20,7 @@ export const TrackFilterItem = ({
 }: ITrackProps) => {
   const dispatch = useDispatch();
   const { track } = useSelector((state: any) => state.testimonial);
+  console.log(track)
   return (
     <div
       className="flex flex-row h-[58px] text-[16px] cursor-pointer px-[8px] hover:bg-[#F0F3F9]"

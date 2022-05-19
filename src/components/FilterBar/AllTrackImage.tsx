@@ -16,7 +16,7 @@ export const AllTrackImage = ({url}:{url:string}) => {
           fill="black"
         />
       </svg>
-      <img className="h-5 w-[37.56px] mt-3" src={url} alt="trackImage" />
+      <img className="h-5 w-[37.56px] mt-[13px]" src={url} alt="trackImage" />
     </>
   );
 };
