@@ -41,13 +41,7 @@ const TestimonialItem = ({
       </div>
       <div className="content w-5/12 h-full grid content-center">
         <p
-          style={{
-            width: "50ch",
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-          className="font-normal  text-content-color"
+          className="font-normal w-[50ch] truncate text-content-color"
         >
           {content}
         </p>
