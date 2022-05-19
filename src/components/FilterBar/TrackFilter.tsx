@@ -54,7 +54,7 @@ const TrackFilter = () => {
             await updateState(setIsTrackListVisible, !isTrackListVisible)
           }
         >
-          <AllTrackImage url={trackImage}/>
+          <AllTrackImage/>
         </div>
       }
       
