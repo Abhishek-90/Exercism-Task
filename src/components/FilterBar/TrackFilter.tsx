@@ -14,6 +14,7 @@ function updateState(setState: Function, state: any) {
 const fetchTracks = async (url: string) => {
   try {
     const response = await axios.get(url)
+    console.log(response.data)
     return response.data
   } catch (error) {
     console.error(error)
@@ -28,12 +29,12 @@ const TrackFilter = () => {
   const [testimonialsCountList, setTestimonialsCountList] = useState<any[]>([])
   const [isTrackListVisible, setIsTrackListVisible] = useState<boolean>(false)
   const { track } = useSelector((state: any) => state.testimonial)
-
+  const [totalCount, setTotalCount] = useState(0)
   useEffect(() => {
     const fetchTracksCaller = async () => {
       const tracksList = (await fetchTracks(tracks)).tracks
       const testimonialsCountList = (await fetchTracks(testimonials)).testimonials.track_counts
-      
+      console.log(testimonialsCountList)
       const finalTrackList = tracksList.filter(
         (item: any) => testimonialsCountList[item.slug] > 0
       )
@@ -42,7 +43,6 @@ const TrackFilter = () => {
       await updateState(setTestimonialsCountList, testimonialsCountList)
     }
     fetchTracksCaller()
-    console.log(track)
   }, [])
 
   return (
@@ -70,6 +70,15 @@ const TrackFilter = () => {
         </div>}
       {isTrackListVisible && (
         <div className="trackList absolute mt-20 ml-3 w-[376px] min-h-fit max-h-[364px] overflow-y-scroll bg-[#FFFFFF] rounded-lg outline-[#2E57E8] shadow-l">
+          <TrackFilterItem
+            title="All"
+            slug=""
+            icon_url=""
+            count={totalCount}
+            setImage={setTrackImage}
+            setTrackVisibility={setIsTrackListVisible}
+            key={track.title}
+          />
           {trackList.length > 0 && (
             trackList.map((track) => {
               return (

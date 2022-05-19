@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { changeTrack } from "../../Store/ApiUrl";
+import { AllTrackImage } from "./AllTrackImage";
 
 interface ITrackProps {
   title: string;
@@ -20,7 +21,7 @@ export const TrackFilterItem = ({
 }: ITrackProps) => {
   const dispatch = useDispatch();
   const { track } = useSelector((state: any) => state.testimonial);
-  console.log(track)
+  
   return (
     <div
       className="flex flex-row h-[58px] text-[16px] cursor-pointer px-[8px] hover:bg-[#F0F3F9]"
@@ -45,12 +46,12 @@ export const TrackFilterItem = ({
             setTrackVisibility(false);
           }}
         />
-        <img src={icon_url} className="h-[42px] mr-[19px]" alt="alt" />
+        <img src={icon_url || "https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/logo-42e9b829cf6816496069a62608cb51e7c13624bd.svg"} className="h-[42px] mr-[19px]" alt="alt" />
         <label htmlFor={title} className="cursor-pointer">
           {title}
         </label>
       </div>
-      <span className="py-1 px-2 h-8 w-10 ml-3 flex justify-center text-sm border border-solid border-2 rounded-l-2xl rounded-r-2xl border-gray-300 mt-1">
+      <span className="py-1 px-2 h-8 w-10 ml-3 mt-3 flex justify-center text-sm border border-solid border-2 rounded-l-2xl rounded-r-2xl border-gray-300">
         {count}
       </span>
     </div>
