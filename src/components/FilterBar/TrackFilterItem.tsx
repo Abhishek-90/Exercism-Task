@@ -21,7 +21,7 @@ export const TrackFilterItem = ({
 }: ITrackProps) => {
   const dispatch = useDispatch();
   const { track } = useSelector((state: any) => state.testimonial);
-  
+
   return (
     <div
       className="flex flex-row h-[58px] text-[16px] cursor-pointer px-[8px] hover:bg-[#F0F3F9]"
@@ -30,9 +30,8 @@ export const TrackFilterItem = ({
         setImage(icon_url);
         setTrackVisibility(false);
       }}
-      
     >
-      <div className="img-name flex flex-row w-80 items-center">
+      <div className="img-name flex flex-row w-80 items-center px-2">
         <input
           className="h-[21px] w-[21px] mr-[26px]"
           type="radio"
@@ -46,7 +45,19 @@ export const TrackFilterItem = ({
             setTrackVisibility(false);
           }}
         />
-        <img src={icon_url || "https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/logo-42e9b829cf6816496069a62608cb51e7c13624bd.svg"} className="h-[42px] mr-[19px]" alt="alt" />
+        <div className="logo flex items-center">
+          {slug === "" && <AllTrackImage left={0.5} right={19} />}
+          {slug !== "" && (
+            <img
+              src={
+                icon_url ||
+                "https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/logo-42e9b829cf6816496069a62608cb51e7c13624bd.svg"
+              }
+              className="h-[42px] mr-[19px]"
+              alt="alt"
+            />
+          )}
+        </div>
         <label htmlFor={title} className="cursor-pointer">
           {title}
         </label>

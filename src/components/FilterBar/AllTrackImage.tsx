@@ -1,4 +1,4 @@
-export const AllTrackImage = () => {
+export const AllTrackImage = ({left,right}:{left?:number,right?:number}) => {
   return (
     <>
       <svg
@@ -7,7 +7,7 @@ export const AllTrackImage = () => {
         viewBox="0 0 38 42"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute mt-0.5"
+        className={`absolute ml-${left} mr-[${right}px]`} 
       >
         <path
           fillRule="evenodd"
@@ -16,7 +16,7 @@ export const AllTrackImage = () => {
           fill="black"
         />
       </svg>
-      <img className="h-5 w-[37.56px] mt-[13px]" src={"https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/logo-42e9b829cf6816496069a62608cb51e7c13624bd.svg"} alt="trackImage" />
+      <img className={`h-5 w-[37.56px] mt-[1px]`} src={"https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/logo-42e9b829cf6816496069a62608cb51e7c13624bd.svg"} alt="trackImage" />
     </>
   );
 };

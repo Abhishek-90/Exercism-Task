@@ -49,7 +49,7 @@ const TrackFilter = () => {
     <>
       {track === "" && 
         <div
-          className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg outline outline-2 outline-[#2E57E8]"
+          className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg outline outline-2 outline-[#2E57E8] flex items-center"
           onClick={async () =>
             await updateState(setIsTrackListVisible, !isTrackListVisible)
           }
