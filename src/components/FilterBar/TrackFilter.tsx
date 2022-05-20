@@ -14,6 +14,7 @@ function updateState(setState: Function, state: any) {
 const fetchTracks = async (url: string) => {
   try {
     const response = await axios.get(url);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -28,37 +29,42 @@ const TrackFilter = () => {
   const [testimonialsCountList, setTestimonialsCountList] = useState<any[]>([]);
   const [isTrackListVisible, setIsTrackListVisible] = useState<boolean>(false);
   const { track } = useSelector((state: any) => state.testimonial);
-
+  const [totalCount, setTotalCount] = useState(0);
   useEffect(() => {
     const fetchTracksCaller = async () => {
       const tracksList = (await fetchTracks(tracks)).tracks;
       const testimonialsCountList = (await fetchTracks(testimonials))
         .testimonials.track_counts;
+      console.log(testimonialsCountList);
       const finalTrackList = tracksList.filter(
         (item: any) => testimonialsCountList[item.slug] > 0
       );
+
       await updateState(setTrackList, finalTrackList);
       await updateState(setTestimonialsCountList, testimonialsCountList);
     };
     fetchTracksCaller();
-    console.log(track)
   }, []);
 
   return (
     <>
-      {track === "" ? (
+      {track === "" && (
         <div
-          className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg outline outline-2 outline-[#2E57E8]"
+          className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg outline outline-2 outline-[#2E57E8] flex items-center"
           onClick={async () =>
             await updateState(setIsTrackListVisible, !isTrackListVisible)
           }
         >
-          <AllTrackImage url={trackImage}/>
+          <AllTrackImage />
         </div>
-      ) : (
+      )}
+
+      {track !== "" && (
         <div
-          className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg"
-          onClick={async () =>await updateState(setIsTrackListVisible, !isTrackListVisible)}
+          className="track-filter h-10 ml-4 mr-2 w-20 px-2 mt-[19px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg"
+          onClick={async () =>
+            await updateState(setIsTrackListVisible, !isTrackListVisible)
+          }
         >
           <img
             className="h-full w-[37.56px]"
@@ -67,9 +73,18 @@ const TrackFilter = () => {
           />
         </div>
       )}
-      {isTrackListVisible ? (
+      {isTrackListVisible && (
         <div className="trackList absolute mt-20 ml-3 w-[376px] min-h-fit max-h-[364px] overflow-y-scroll bg-[#FFFFFF] rounded-lg outline-[#2E57E8] shadow-l">
-          {trackList.length > 0 ? (
+          <TrackFilterItem
+            title="All"
+            slug=""
+            icon_url=""
+            count={totalCount}
+            setImage={setTrackImage}
+            setTrackVisibility={setIsTrackListVisible}
+            key={track.title}
+          />
+          {trackList.length > 0 &&
             trackList.map((track) => {
               return (
                 <TrackFilterItem
@@ -82,13 +97,8 @@ const TrackFilter = () => {
                   key={track.title}
                 />
               );
-            })
-          ) : (
-            <></>
-          )}
+            })}
         </div>
-      ) : (
-        <></>
       )}
     </>
   );
