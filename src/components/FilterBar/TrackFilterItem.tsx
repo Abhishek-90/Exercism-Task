@@ -45,8 +45,8 @@ export const TrackFilterItem = ({
             setTrackVisibility(false);
           }}
         />
-        <div className="logo flex items-center">
-          {slug === "" && <AllTrackImage left={0.5} right={19} />}
+        <div className={`logo flex items-center ${slug === "" && `mr-[25px]`}`}>
+          {slug === "" && <AllTrackImage left={0.1}/>}
           {slug !== "" && (
             <img
               src={

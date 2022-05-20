@@ -1,4 +1,4 @@
-export const AllTrackImage = ({left,right}:{left?:number,right?:number}) => {
+export const AllTrackImage = ({left}:{left?:number}) => {
   return (
     <>
       <svg
@@ -7,7 +7,7 @@ export const AllTrackImage = ({left,right}:{left?:number,right?:number}) => {
         viewBox="0 0 38 42"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={`absolute ml-${left} mr-[${right}px]`} 
+        className={`absolute ml-${left}`} 
       >
         <path
           fillRule="evenodd"
