@@ -59,7 +59,7 @@ const TrackFilter = () => {
       }
       
       {track !== "" && <div
-          className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg"
+          className="track-filter h-10 ml-4 mr-2 w-20 px-2 mt-[19px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg"
           onClick={async () =>await updateState(setIsTrackListVisible, !isTrackListVisible)}
         >
           <img
