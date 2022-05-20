@@ -30,11 +30,13 @@ const TrackFilter = () => {
   const [isTrackListVisible, setIsTrackListVisible] = useState<boolean>(false);
   const { track } = useSelector((state: any) => state.testimonial);
   const [totalCount, setTotalCount] = useState(0);
+  
   useEffect(() => {
     const fetchTracksCaller = async () => {
       const tracksList = (await fetchTracks(tracks)).tracks;
-      const testimonialsCountList = (await fetchTracks(testimonials))
-        .testimonials.track_counts;
+      let testimonialsCountList = (await fetchTracks(testimonials))
+      updateState(setTotalCount,testimonialsCountList.testimonials.pagination.total_count)
+      testimonialsCountList = testimonialsCountList.testimonials.track_counts
       console.log(testimonialsCountList);
       const finalTrackList = tracksList.filter(
         (item: any) => testimonialsCountList[item.slug] > 0
