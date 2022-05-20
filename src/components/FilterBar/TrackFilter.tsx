@@ -30,11 +30,13 @@ const TrackFilter = () => {
   const [isTrackListVisible, setIsTrackListVisible] = useState<boolean>(false);
   const { track } = useSelector((state: any) => state.testimonial);
   const [totalCount, setTotalCount] = useState(0);
+  
   useEffect(() => {
     const fetchTracksCaller = async () => {
       const tracksList = (await fetchTracks(tracks)).tracks;
-      const testimonialsCountList = (await fetchTracks(testimonials))
-        .testimonials.track_counts;
+      let testimonialsCountList = (await fetchTracks(testimonials))
+      updateState(setTotalCount,testimonialsCountList.testimonials.pagination.total_count)
+      testimonialsCountList = testimonialsCountList.testimonials.track_counts
       console.log(testimonialsCountList);
       const finalTrackList = tracksList.filter(
         (item: any) => testimonialsCountList[item.slug] > 0
@@ -50,7 +52,7 @@ const TrackFilter = () => {
     <>
       {track === "" && (
         <div
-          className="track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg outline outline-2 outline-[#2E57E8] flex items-center"
+          className={`track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[16px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg ${isTrackListVisible && 'outline outline-2 outline-[#2E57E8]'} flex items-center`}
           onClick={async () =>
             await updateState(setIsTrackListVisible, !isTrackListVisible)
           }
@@ -61,13 +63,13 @@ const TrackFilter = () => {
 
       {track !== "" && (
         <div
-          className="track-filter h-10 ml-4 mr-2 w-20 px-2 mt-[19px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg"
+          className={`track-filter h-12 ml-4 mr-2 w-20 px-2 mt-[19px] bg-downArrow-2 bg-no-repeat bg-right cursor-pointer rounded-lg ${isTrackListVisible && 'outline outline-2 outline-[#2E57E8]'} flex items-center`}
           onClick={async () =>
             await updateState(setIsTrackListVisible, !isTrackListVisible)
           }
         >
           <img
-            className="h-full w-[37.56px]"
+            className=" w-[37.56px]"
             src={trackImage}
             alt="trackImage"
           />
