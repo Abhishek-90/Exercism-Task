@@ -123,7 +123,7 @@ const Pagination = () => {
       <div className="page-number w-4/6 grid items-center flex justify-center">
         <div className="inner-page-number flex flex-row space-x-4">
           {pageNumbers.map((item, index) => {
-            return <PaginationNumber pageNumber={item} />;
+            return <PaginationNumber key={index} pageNumber={item}/>;
           })}
         </div>
       </div>

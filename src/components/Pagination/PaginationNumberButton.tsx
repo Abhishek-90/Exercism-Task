@@ -10,7 +10,6 @@ const PaginationNumber = ({ pageNumber}:{pageNumber: number|string}) => {
       pageNumber === '...' ? 
       <p
         className="dot border-none px-2 mt-2"
-        key={pageNumber}
       >
         {pageNumber}
       </p>
@@ -18,7 +17,6 @@ const PaginationNumber = ({ pageNumber}:{pageNumber: number|string}) => {
       <button
         className={ `font-semibold text-sm py-2 px-3.5 rounded-lg ${page !== pageNumber ? 'border-solid  border text-button-text  border-page-button border-2 hover:bg-focus-button-bg': 'text-selected-button-text border-2 border-page-button-focus border-2 bg-focus-button-bg'}`}
         onClick={() => dispatch(changePageByPayload(pageNumber))}
-        key={pageNumber}
       >
         {pageNumber}
       </button>

@@ -14,7 +14,6 @@ function updateState(setState: Function, state: any) {
 const fetchTracks = async (url: string) => {
   try {
     const response = await axios.get(url);
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -37,7 +36,7 @@ const TrackFilter = () => {
       let testimonialsCountList = (await fetchTracks(testimonials))
       updateState(setTotalCount,testimonialsCountList.testimonials.pagination.total_count)
       testimonialsCountList = testimonialsCountList.testimonials.track_counts
-      console.log(testimonialsCountList);
+      
       const finalTrackList = tracksList.filter(
         (item: any) => testimonialsCountList[item.slug] > 0
       );
