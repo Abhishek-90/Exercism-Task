@@ -49,6 +49,14 @@ module.exports = {
         'hero-pattern': "url('constants/ellipse.jpg')",
         'downArrow':"url('./components/FilterBar/Shape.svg')",
         'downArrow-2':"url('./components/FilterBar/down.svg')",
+      },
+      spacing:{
+        'container':'75rem',
+        'navbar':'78.5rem'
+      },
+      maxWidth:{
+        'container-max':'105rem',
+        'navbar':'115rem'
       }
     },
   },

@@ -2,12 +2,12 @@ import { CustomIconsLinks } from "./CustomIconLinks";
 
 const NavigationBar = () => {
   return (
-    <div className="navigation w-full h-[4rem] flex flex-row border-b-2 border-solid border-navigation-border ">
+    <div className="navigation w-full h-[4rem] flex flex-row border-b-2 border-solid border-navigation-border max-w-navbar">
       <div className="right-size links flex flex-row space-x-2 w-7/12">
-        <div className="exercism-logo ml-8 grid items-center">
+        <div className="exercism-logo ml-6 grid items-center">
           <a href="https://exercism.org/dashboard">
             <img
-              className="h-1/2 w-[8rem]"
+              className="h-1/2 w-[7rem]"
               src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/exercism-with-logo-black-b427c06c6a068ba9f391734115e4d22dfa876d1d.svg"
               alt="exercism-logo"
             />
@@ -147,7 +147,7 @@ const NavigationBar = () => {
             </div>
             <div className="reputation-picture w-24 flex flex-row content-center my-2 cursor-pointer">
               <img
-                className="h-9 w-24 ml-3 mt-1"
+                className="h-9 w-[22rem] ml-3 mt-1"
                 src={require("../../constants/Reputation.jpg")}
                 alt="reputation"
               />
@@ -157,14 +157,14 @@ const NavigationBar = () => {
             </div>
             <div className="profile-picture grid items-center cursor-pointer">
               <img
-                className="h-12 w-12 rounded-full"
+                className="h-10 w-10 rounded-full"
                 src="https://avatars.githubusercontent.com/u/43419831?v=4"
                 alt="profile"
               />
             </div>
             <div className="menu-button grid items-center cursor-pointer">
               <img
-                className="h-6 w-4"
+                className="h-5 w-4"
                 src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/more-vertical-371ef6f2314bb5dbe5d3892a7ee098c6ebc3cf30.svg"
                 alt="menu"
               />
